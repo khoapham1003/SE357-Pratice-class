@@ -1,0 +1,5 @@
+1. When choosing a requirements engineering tool, consider its functionality, ease of use, scalability, integration capabilities, collaboration features, customization options, vendor support, cost, security, and user feedback. These criteria will help you select a tool that meets your requirements effectively.
+2. Drawbacks of requirements engineering tools: complexity, excessive features, cost implications, compatibility limitations, and vendor dependency.
+3.When selecting an open-source requirements engineering tool, look for an active community, clear documentation, customization options, compatibility with other tools, stability, security, available support channels, and opportunities for community contributions.
+4.Tools enable distributed, global requirements engineering by offering collaboration features, version control, communication channels, traceability, and virtual meeting capabilities.
+Drawbacks include communication challenges, technical difficulties, lack of face-to-face interaction, internet dependency, and security concerns. Mitigating these issues requires clear communication channels, training, support, and addressing security measures
