@@ -1,0 +1,39 @@
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+actor User as User
+actor Admin as Admin
+actor Staff as Staff
+
+rectangle "Document management system" {
+User --> (Sign Up)
+User --> (Sign In)
+User --> (View Document)
+User --> (Print)
+User --> (Search Document)
+(Sign In) <-- Staff
+(View Document) <-- Staff
+(Search Document) <-- Staff
+(Manage Document) <-- Staff
+(Print) <-- Staff
+
+Staff <|-- Admin
+
+
+(Manage staff account) <-- Admin
+(Censorship) <-- Admin
+
+(Manage Document) ..> (Censorship) : <<include>>
+(Sign Up) ..> (Save user information): <<include>>
+(Sign In) ..> (Authenticate): <<include>>
+(Sign Up) ..> (Authenticate): <<include>>
+(View Staff Account) ..> (Manage staff account) : <<include>>
+(Create Staff Account) ..> (Manage staff account) : <<include>>
+(Delete Staff Account) ..> (Manage staff account) : <<include>>
+(Delete Document) ..> (Manage Document) : <<include>>
+(Create new Document) ..> (Manage Document) : <<include>>
+(Update Document) ..> (Manage Document) : <<include>>
+}
+
+@enduml
