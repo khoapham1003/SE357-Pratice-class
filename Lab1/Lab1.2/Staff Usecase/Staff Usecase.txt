@@ -1,0 +1,21 @@
+
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+actor Staff as Staff
+
+rectangle "Document management system" {
+(Sign In) <-- Staff
+(View Document) <-- Staff
+(Search Document) <-- Staff
+(Manage Document) <-- Staff
+(Print) <-- Staff
+
+(Sign In) ..> (Authenticate): <<include>>
+(Delete Document) ..> (Manage Document) : <<include>>
+(Create new Document) ..> (Manage Document) : <<include>>
+(Update Document) ..> (Manage Document) : <<include>>
+}
+
+@enduml

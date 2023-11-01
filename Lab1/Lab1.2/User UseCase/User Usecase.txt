@@ -1,0 +1,21 @@
+
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+actor User as User
+
+rectangle "Document management system" {
+User --> (Sign Up)
+User --> (Sign In)
+User --> (View Document)
+User --> (Print)
+User --> (Search Document)
+
+(Sign Up) ..> (Save user information): <<include>>
+(Sign In) ..> (Authenticate): <<include>>
+(Sign Up) ..> (Authenticate): <<include>>
+}
+
+@enduml
+
