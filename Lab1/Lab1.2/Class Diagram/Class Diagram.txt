@@ -1,0 +1,57 @@
+@startuml
+class Account{
+    id
+    UserName
+    Password
+    Phone
+    Email
+    DateOfBirth
+    Gender
+    Type
+   +SignIn()
+   +ForgotPassword()
+   +CreateUser()
+   +EditUser()
+   +DeleteUser()
+   +PrintDocument()
+   +SearchDocument()
+   +DownloadDocument()
+}
+
+class Admin {
+  Type: Admin
+  +CreateStaff()
+  +EditStaff()
+  +Censorship()
+  +DeteleStaff()
+}
+
+class Staff {
+    Type: Staff
+   +UpdateDocument()
+   +DeleteDocument()
+   +UploadDocument()
+}
+
+class User {
+   Type: User
+  +SignUp()
+   
+
+}
+Account <|-- Staff
+Staff <|-- Admin
+Account <|-- User
+
+
+class "Document" {
+  id
+  Name
+  Type
+  Content
+  Description
+  ReadRequiredRole
+  +Print()
+  +Show()
+}
+@enduml
