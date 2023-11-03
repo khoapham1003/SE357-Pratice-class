@@ -1,0 +1,24 @@
+ @startuml SearchDocument
+actor Admin_Staff_User as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Document List" screen
+activate System
+User -> System: Search for any Document
+System -> Server: Send "Search" request
+activate Server
+Server -> Server: Find document(s)
+alt Document(s) exist
+    Server --> System: List of Document(s)
+    System --> User: Show List on screen
+else Document(s) do not exist
+    Server --> System: No document found
+    deactivate Server
+    System --> User: Show empty List on screen
+    deactivate System
+end 
+deactivate User
+
+@enduml

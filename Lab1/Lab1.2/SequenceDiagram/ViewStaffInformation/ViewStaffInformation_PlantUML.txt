@@ -1,0 +1,24 @@
+@startuml ViewStaffInformation
+actor Admin_Staff as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Staff Information" screen
+activate System
+System -> Server: Send "View staff information" request
+activate Server
+Server -> Server: Prepare staff information
+alt Valid staff
+    Server --> System: Request Successful
+    Server --> System: Staff information
+    System --> User: Show staff information on screen
+else Invalid staff
+    Server --> System: Request failed
+    deactivate Server
+    System --> User: Show error notification
+    deactivate System
+end 
+deactivate User
+
+@enduml

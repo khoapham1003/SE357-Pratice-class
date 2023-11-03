@@ -1,0 +1,19 @@
+@startuml FilterDocument
+actor Admin_Staff_User as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Document List" screen
+activate System
+User -> System: Choose filter for Document List
+System -> Server: Send "Filter" request
+activate Server
+Server -> Server: Filter Documents
+Server -> System: Filtered List
+deactivate Server
+System -> User: Show Filtered List on screen
+deactivate System
+deactivate User
+
+@enduml

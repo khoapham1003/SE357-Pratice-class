@@ -1,0 +1,25 @@
+@startuml UpdateUserInformation
+actor User as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Update User Information" screen
+activate System
+User -> System: Change information that needs to be updated
+User -> System: Click on "Update information" button 
+System -> Server: Send "Update user information" request
+activate Server
+Server -> Server: Save changes
+alt Save successfully
+    Server --> System: Request Successful
+    System --> User: Show updated information on "User Information" screen
+else Save failed
+    Server --> System: Request failed
+    deactivate Server
+    System --> User: Show error notification
+    deactivate System
+end 
+deactivate User
+
+@enduml

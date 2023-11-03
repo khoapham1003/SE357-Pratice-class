@@ -1,0 +1,29 @@
+@startuml ProposalSubmission
+actor Admin_Staff as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Document Information" screen
+activate System
+User -> System: Click on "Proposal Submission" button 
+System -> User: Move to "Document Proposal" form
+User -> System: Enter Proposal
+User -> System: Click "Submit" button
+System -> User: Thanks for Proposal Submission(message)
+System -> User: Move user to "Document Information" screen
+deactivate User
+System -> Server: Send request
+activate Server
+Server -> Server: Save Proposal in Proposal Directory
+Server -> Server: Authenticate Proposal
+alt Agree
+    Server -> Server: Update Document based on Proposal
+    Server --> System: Document Updated
+    deactivate System
+else Deny
+    Server -> Server: Delete Proposal
+end 
+deactivate Server
+
+@enduml

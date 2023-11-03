@@ -1,0 +1,28 @@
+@startuml DeleteUser
+actor Admin_User as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "User Information" screen
+activate System
+User -> System: Click on "Delete User" button 
+System -> User: Ask again(message)
+alt Agree
+    System --> Server: Send "Delete" request
+    activate Server
+    Server -> Server: Delete User and Save changes
+    Server --> System: Delete successfully
+    deactivate Server
+    alt With Admin role
+        System --> User: Move to "User List" screen
+    else With User role
+        System --> User: Move to "Sign In" screen
+    end
+else Deny
+    System --> User: Move user to "User Information" screen
+    deactivate System
+end
+deactivate User
+
+@enduml

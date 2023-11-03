@@ -1,0 +1,26 @@
+@startuml CreateNewStaff
+actor Admin as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Add New Staff" screen
+activate System
+User -> System: Enter information to create new account
+User -> System: Click on "Create" button 
+System -> Server: Send "Create New Staff" request
+activate Server
+Server -> Server: Save Changes
+alt Save successfully
+    Server --> System: Staff Added
+    System --> User: New Staff Added(message)
+    System --> User: Move to "Staff List" screen
+else Save failed
+    Server --> System: Can not Create New Staff
+    deactivate Server
+    System --> User: Ask Create again
+    deactivate System
+end
+deactivate User
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml SignUp
+actor User as User
+participant System
+participant Server
+
+activate User
+User -> System: Enter information to sign up an account
+activate System
+User -> System: Click on "Sign up" button
+System -> System: Check format
+alt Format is incorrect
+    System --> User: Wrong format(message)
+else Format is correct
+    System --> Server: Send sign up request
+    activate Server
+    Server -> Server: Authenticate username and password
+    alt Valid user
+        Server -> Server: Save new user
+        Server --> System: Accept Sign up
+        System --> User: Sign up Successful(message)
+        System --> User: Move user to Sign in screen
+    else Invalid user
+        Server --> System: Reject Sign up
+        deactivate Server
+        System --> User: Sign up Failed(message) 
+        System --> User: Ask sign up again
+        deactivate System
+    end 
+end
+deactivate User
+
+@enduml
