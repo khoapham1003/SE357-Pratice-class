@@ -1,0 +1,8 @@
+@startuml
+start
+:Staff logined;
+:Staff want to find document;
+:System retrieves potential matches;
+:System show potential matches;
+stop
+@enduml
