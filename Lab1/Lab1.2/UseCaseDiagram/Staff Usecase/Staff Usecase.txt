@@ -1,4 +1,3 @@
-
 @startuml
 
 left to right direction
@@ -12,7 +11,7 @@ rectangle "Document management system" {
 (Manage Document) <-- Staff
 (Print) <-- Staff
 
-(Sign In) ..> (Authenticate): <<include>>
+(Sign In) ..> (Forgot Password): <<extend>>
 (Delete Document) ..> (Manage Document) : <<include>>
 (Create new Document) ..> (Manage Document) : <<include>>
 (Update Document) ..> (Manage Document) : <<include>>

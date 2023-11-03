@@ -1,4 +1,3 @@
-
 @startuml
 
 left to right direction
@@ -12,10 +11,7 @@ User --> (View Document)
 User --> (Print)
 User --> (Search Document)
 
-(Sign Up) ..> (Save user information): <<include>>
-(Sign In) ..> (Authenticate): <<include>>
-(Sign Up) ..> (Authenticate): <<include>>
+(Sign In) ..> (Forgot password): <<extend>>
 }
 
 @enduml
-

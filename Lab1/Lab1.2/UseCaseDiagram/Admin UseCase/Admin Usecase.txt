@@ -15,7 +15,7 @@ rectangle "Document management system" {
 
 
 (Manage Document) ..> (Censorship) : <<include>>
-(Sign In) ..> (Authenticate): <<include>>
+(Sign In) ..> (Forgot Password): <<extend>>
 (View Staff Account) ..> (Manage staff account) : <<include>>
 (Create Staff Account) ..> (Manage staff account) : <<include>>
 (Delete Staff Account) ..> (Manage staff account) : <<include>>

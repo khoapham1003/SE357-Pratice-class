@@ -25,9 +25,7 @@ Staff <|-- Admin
 (Censorship) <-- Admin
 
 (Manage Document) ..> (Censorship) : <<include>>
-(Sign Up) ..> (Save user information): <<include>>
-(Sign In) ..> (Authenticate): <<include>>
-(Sign Up) ..> (Authenticate): <<include>>
+(Sign In) ..> (Forgot Password): <<extend>>
 (View Staff Account) ..> (Manage staff account) : <<include>>
 (Create Staff Account) ..> (Manage staff account) : <<include>>
 (Delete Staff Account) ..> (Manage staff account) : <<include>>
@@ -35,5 +33,3 @@ Staff <|-- Admin
 (Create new Document) ..> (Manage Document) : <<include>>
 (Update Document) ..> (Manage Document) : <<include>>
 }
-
-@enduml
