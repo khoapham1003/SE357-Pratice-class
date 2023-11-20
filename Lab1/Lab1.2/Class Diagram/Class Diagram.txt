@@ -1,57 +1,119 @@
 @startuml
-class Account{
-    id
-    UserName
-    Password
-    Phone
-    Email
-    DateOfBirth
-    Gender
-    Type
-   +SignIn()
-   +ForgotPassword()
-   +CreateUser()
-   +EditUser()
-   +DeleteUser()
-   +PrintDocument()
-   +SearchDocument()
-   +DownloadDocument()
+left to right direction
+class User{
+id
+username
+password
+full_name
+birthday
+sex
+email
+position
+access_group
+}
+class Position{
+id
+name
+abbreviation
+note
+}
+class  AccessGroup{   
+id
+name
+abbreviation
+note
+}
+class Document {
+id
+document_number
+issue_date
+issuing_agency
+document_type
+num_of_page
+field_of_text
+summary
+content
+urgency_level
+security_level
+attached_file_list
+notes
+}
+class IncomingDocument {
+id
+reference_number
+receipt_date
+recipient
+approver
+assigner
+implementer
+processing_deadline
+processing_results
+}
+class OutcomingDocument {
+id
+dispatch_number
+dispatch_date
+destination
+writer
+checker
+approver
+issuing_authority
+}
+class DocumentType{
+id
+name
+abbreviation
+note
 }
 
-class Admin {
-  Type: Admin
-  +CreateStaff()
-  +EditStaff()
-  +Censorship()
-  +DeteleStaff()
+class SecurityLevel{
+id
+level
+note
 }
-
-class Staff {
-    Type: Staff
-   +UpdateDocument()
-   +DeleteDocument()
-   +UploadDocument()
+class FieldOfText{
+id
+name
+abbreviation
+note
 }
-
-class User {
-   Type: User
-  +SignUp()
-   
-
+class UrgencyLevel{
+id
+level
+note
 }
-Account <|-- Staff
-Staff <|-- Admin
-Account <|-- User
-
-
-class "Document" {
-  id
-  Name
-  Type
-  Content
-  Description
-  ReadRequiredRole
-  +Print()
-  +Show()
+class IssuingAgency{
+id
+name
+abbreviation
+note
 }
+class DocumentLog{
+id
+name
+type
+register_year
+note
+}
+class Folder{
+id
+folder_number
+name
+retention_period
+}
+Document <|-- OutcomingDocument
+Document <|-- IncomingDocument
+Document "0..*" -- "0..*" Document: related to
+
+Document "0..*" o-- "1" DocumentLog: has
+Document "0..*" o-- "0..*" Folder: has
+ 
+FieldOfText "1" -- "0..*" Document::field_of_text
+DocumentType "1" -- "0..*" Document::document_type 
+IssuingAgency "1" -- "0..*" Document::issuing_agency 
+UrgencyLevel "1" -- "0..*" Document::urgency_level 
+SecurityLevel "1" -- "0..*" Document::security_level 
+
+AccessGroup "1" -- "0..*" User::access_group
+Position "1" -- "0..*" User::position
 @enduml
