@@ -1,0 +1,28 @@
+@startuml AddOutcomingDocumentintoDocumentLog
+actor Admin_Leader_Clerk as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Outcoming Document Management" Screen
+activate System
+User -> System: View Unlogged Outcoming Document
+User -> System: Click on "Add to Document Log" Button 
+System -> User: Show "Add to Outcomming Document Log" Form
+User -> System: Choose Log from list
+User -> System: Click "Add" button
+System -> Server: Send request      
+activate Server
+Server -> Server: Save changes
+alt Save successfully
+    Server --> System: Outcoming Document Added into Document Log
+    System --> User: Show success notification
+else Save failed
+    Server --> System: Fail to Add to Document Log
+deactivate Server
+    System --> User: Show fail notification and reason
+deactivate System
+end
+deactivate User
+
+@enduml

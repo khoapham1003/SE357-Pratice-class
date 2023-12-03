@@ -1,0 +1,25 @@
+@startuml Backups
+actor Admin_Leader as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Backups" Screen
+activate System
+User -> System: Choose file to backups 
+User -> System: Click on "Backup" Button
+
+System -> Server: Send request
+activate Server
+Server -> Server: Backup to destination file
+alt Backup successfully
+    Server --> System: Backup Done
+    System --> User: Show success notification
+else Backup failed
+    Server --> System:Fail to Backup
+deactivate Server
+    System --> User: Show fail notification and reason
+deactivate System
+end
+deactivate User
+@enduml

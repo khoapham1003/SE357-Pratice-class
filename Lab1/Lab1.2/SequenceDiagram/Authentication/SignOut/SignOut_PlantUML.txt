@@ -1,0 +1,18 @@
+@startuml SignOut
+actor User as User
+participant System
+
+activate User
+activate System
+User -> System: Click on "Sign Out" button
+System -> User: Show Confirmation Form
+User -> System: Give decision
+alt No
+    System--> User: Move User to Home Screen
+else Yes
+   System--> User: Move User to "Sign In" Screen
+deactivate System
+end
+deactivate User
+
+@enduml

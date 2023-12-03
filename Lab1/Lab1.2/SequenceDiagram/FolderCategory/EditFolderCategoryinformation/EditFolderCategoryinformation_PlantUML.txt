@@ -1,0 +1,33 @@
+@startuml EditFolderCategoryinformation
+actor Admin_Leader_Clerk as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "FolderCategory Management" Screen
+activate System
+User -> System: Choose a FolderCategory
+User -> System: Click on "Edit FolderCategory" Button 
+System -> User: Show "Edit FolderCategory" Form
+User -> System: Edit information for FolderCategory
+User -> System: Click "Save" button
+System -> System: Check input 
+alt Incorrect format or Missing input
+    System --> User: Show notification about wrong input format or missing input
+    System --> User: Ask User to re-enter information
+else Correct format and all input filled
+    System --> Server: Send request      
+activate Server
+    Server -> Server: Save changes
+    alt Save successfully
+        Server --> System: Foler information Edited
+        System --> User: Show success notification
+    else Save failed
+        Server --> System:Fail to Update FolderCategory information
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+end
+deactivate User
+@enduml

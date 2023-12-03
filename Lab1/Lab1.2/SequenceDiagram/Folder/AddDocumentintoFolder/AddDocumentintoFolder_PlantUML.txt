@@ -1,0 +1,48 @@
+@startuml AddDocumentintoFolder
+actor Admin_Leader_Clerk as User
+participant System
+participant Server
+
+opt From Incoming/Outcoming Document Management
+activate User
+    User -> System: Access "Incoming/Outcoming Document Management" Screen
+activate System
+    User -> System: Choose Document to add into Folder
+    User -> System: Click on "Add into Folder" Button
+    System -> User: Show "Add Document into Folder" Form
+    User -> System: Choose the Folder
+    User -> System: Click "Save" button
+
+deactivate System
+end
+
+opt From Folder Management
+    User -> System: Access "Folder Management" Screen
+activate System
+    User -> System: Choose Folder
+    User -> System: Click on "Add Document into Folder" Button
+    System -> User: Show Document List
+    User -> System: Choose Document(s) to add into Folder
+    User -> System: Click "Save" button
+deactivate System
+end
+deactivate User
+
+
+System -> Server: Send request    
+activate System
+activate Server
+Server -> Server: Save changes
+    alt Add successfully
+        Server --> System: Document(s) Added into Folder
+        System --> User: Show success notification
+activate User
+    else Add failed
+        Server --> System:Fail to Add Document(s) into Folder
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+deactivate User
+
+@enduml

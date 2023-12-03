@@ -1,0 +1,26 @@
+@startuml RemoveDocumentfromFolder
+actor Admin_Leader_Clerk as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Folder Management" Screen
+activate System
+User -> System: Choose Folder 
+System -> User : Show Document List of that Folder
+User -> System: Choose Document(s)
+User -> System: Click on "Remove" Button
+System -> Server: Send request
+activate Server
+Server -> Server: Save changes
+alt Save successfully
+    Server --> System: Document Removed
+    System --> User: Show success notification
+else Save failed
+    Server --> System: Fail to Remove Document(s) from Folder
+deactivate Server
+    System --> User: Show fail notification and reason
+deactivate System
+end
+deactivate User
+@enduml

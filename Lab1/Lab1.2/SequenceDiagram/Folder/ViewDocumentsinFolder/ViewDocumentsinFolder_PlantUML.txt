@@ -1,0 +1,13 @@
+@startuml ViewDocumentsinFolder
+actor User as User
+participant System
+
+activate User
+User -> System: Access "Folder Management" Screen
+activate System
+User -> System: Choose Folder 
+System -> User : Show Document List of that Folder
+
+deactivate System
+deactivate User
+@enduml

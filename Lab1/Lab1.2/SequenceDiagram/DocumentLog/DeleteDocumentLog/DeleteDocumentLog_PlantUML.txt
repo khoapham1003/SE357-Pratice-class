@@ -1,0 +1,33 @@
+@startuml DeleteDocumentLog
+actor Admin_Leader_Clerk as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Document Log Management" Screen
+activate System
+User -> System: Choose a Document Log
+User -> System: Click on "Delete Document Log" Button 
+System -> User: Show Confirmation Form
+User -> System: Give decision
+alt No
+    System--> User: Move User to "Document Log Management" Screen
+deactivate User
+else Yes
+    System --> Server: Send request
+activate Server
+    Server -> Server: Save changes
+    alt Save successfully
+        Server --> System: New Document Log Deleted
+        System --> User: Show success notification
+activate User
+    else Save failed
+        Server --> System:Fail to Delete New Document Log
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+end
+deactivate User
+
+@enduml

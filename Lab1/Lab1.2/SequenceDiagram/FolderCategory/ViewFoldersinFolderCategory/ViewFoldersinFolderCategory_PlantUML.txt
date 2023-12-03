@@ -1,0 +1,13 @@
+@startuml ViewFoldersinFolderCategory
+actor User as User
+participant System
+
+activate User
+User -> System: Access "FolderCategory Management" Screen
+activate System
+User -> System: Choose FolderCategory 
+System -> User : Show Folder List of that FolderCategory
+
+deactivate System
+deactivate User
+@enduml

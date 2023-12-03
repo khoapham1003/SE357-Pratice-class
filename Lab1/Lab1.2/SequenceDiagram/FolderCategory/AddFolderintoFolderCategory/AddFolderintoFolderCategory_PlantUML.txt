@@ -1,0 +1,46 @@
+@startuml AddFolderintoFolderCategory
+actor Admin_Leader_Clerk as User
+participant System
+participant Server
+
+opt From Folder Management
+activate User
+    User -> System: Access "Folder Management" Screen
+activate System
+    User -> System: Choose Folder to add into FolderCategory
+    User -> System: Click on "Add Folder into FolderCategory" Button
+    System -> User: Show "Add Folder into FolderCategory" Form
+    User -> System: Choose FolderCategory
+    User -> System: Click "Save" button
+deactivate System
+end
+
+opt From FolderCategory Management
+    User -> System: Access "FolderCategory Management" Screen
+activate System
+    User -> System: Choose FolderCategory
+    User -> System: Click on "Add Folder into FolderCategory" Button
+    System -> User: Show Folder List
+    User -> System: Choose Folder(s) to add into FolderCategory
+    User -> System: Click "Save" button
+deactivate System
+end
+deactivate User
+
+System -> Server: Send request     
+activate System 
+activate Server
+Server -> Server: Save changes
+    alt Add successfully
+        Server --> System: Folder(s) Added into FolderCategory
+        System --> User: Show success notification
+activate User
+    else Add failed
+        Server --> System:Fail to Add Folder(s) into FolderCategory
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+deactivate User
+
+@enduml

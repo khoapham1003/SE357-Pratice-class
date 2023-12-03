@@ -1,0 +1,79 @@
+@startuml PositionManagement
+actor Admin_Leader as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Position Management" Screen
+activate System
+
+group CURD Position
+
+opt Add new Position
+    User -> System: Click on "Add new Position" Button
+    System -> User: Show "Add new Position" Form
+    User -> System: Enter all required information for New Position
+    User -> System: Click "Save" button
+    System -> System: Check input 
+    alt Incorrect format or Missing input
+        System --> User: Show notification about wrong input format or missing input
+        System --> User: Ask User to re-enter information
+    else Correct format and all input filled
+       System --> Server: Send request      
+activate Server 
+deactivate System
+deactivate Server
+    end
+end
+
+opt Edit Position information
+
+    User -> System: Choose an Position
+activate System
+    User -> System: Click on " Edit Position" Button
+    System -> User: Show "Edit Position" Form
+    User -> System: Update information for Position
+    User -> System: Click "Save" button
+    System -> System: Check input 
+    alt Incorrect format or Missing input
+        System --> User: Show notification about wrong input format or missing input
+        System --> User: Ask User to re-enter information
+    else Correct format and all input filled   
+       System --> Server: Send request      
+activate Server 
+deactivate System
+deactivate Server
+    end
+end
+
+opt Delete Position
+    User -> System: Choose an Position
+activate System
+    User -> System: Click on " Delete Position" Button
+    System -> User: Show Confirmation Form
+    User -> System: Give decision
+    alt No
+        System--> User: Move User to "Position Management" Screen
+    else Yes
+       System --> Server: Send request      
+activate Server 
+deactivate System
+deactivate Server
+    end
+end
+    Server -> Server: Save changes
+activate Server   
+    alt Save successfully
+        Server --> System: Changes Saved
+activate System
+        System --> User: Show success notification
+    else Save failed
+        Server --> System: Fail to save changes
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+end
+deactivate Server
+deactivate User
+@enduml

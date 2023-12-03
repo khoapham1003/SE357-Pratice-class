@@ -1,0 +1,33 @@
+@startuml CreateDocumentLog
+actor Admin_Leader_Clerk as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Document Log Management" Screen
+activate System
+User -> System: Click on "Create Document Log" Button 
+System -> User: Show "Create Document Log" Form
+User -> System: Enter all required information for Document Log
+User -> System: Click "Save" button
+System -> System: Check input 
+alt Incorrect format or Missing input
+    System --> User: Show notification about wrong input format or missing input
+    System --> User: Ask User to re-enter information
+else Correct format and all input filled
+    System --> Server: Send request      
+activate Server
+    Server -> Server: Save changes
+    alt Save successfully
+        Server --> System: New Document Log Created
+        System --> User: Show success notification
+    else Save failed
+        Server --> System:Fail to Create New Document Log
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+end
+deactivate User
+
+@enduml

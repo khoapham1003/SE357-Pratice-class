@@ -1,0 +1,79 @@
+@startuml FieldofTextManagement
+actor Admin_Leader as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "FieldofText Management" Screen
+activate System
+
+group CURD FieldofText
+
+opt Add new FieldofText
+    User -> System: Click on "Add new FieldofText" Button
+    System -> User: Show "Add new FieldofText" Form
+    User -> System: Enter all required information for New FieldofText
+    User -> System: Click "Save" button
+    System -> System: Check input 
+    alt Incorrect format or Missing input
+        System --> User: Show notification about wrong input format or missing input
+        System --> User: Ask User to re-enter information
+    else Correct format and all input filled
+       System --> Server: Send request      
+activate Server 
+deactivate System
+deactivate Server
+    end
+end
+
+opt Edit FieldofText information
+
+    User -> System: Choose an FieldofText
+activate System
+    User -> System: Click on " Edit FieldofText" Button
+    System -> User: Show "Edit FieldofText" Form
+    User -> System: Update information for FieldofText
+    User -> System: Click "Save" button
+    System -> System: Check input 
+    alt Incorrect format or Missing input
+        System --> User: Show notification about wrong input format or missing input
+        System --> User: Ask User to re-enter information
+    else Correct format and all input filled   
+       System --> Server: Send request      
+activate Server 
+deactivate System
+deactivate Server
+    end
+end
+
+opt Delete FieldofText
+    User -> System: Choose an FieldofText
+activate System
+    User -> System: Click on " Delete FieldofText" Button
+    System -> User: Show Confirmation Form
+    User -> System: Give decision
+    alt No
+        System--> User: Move User to "FieldofText Management" Screen
+    else Yes
+       System --> Server: Send request      
+activate Server 
+deactivate System
+deactivate Server
+    end
+end
+    Server -> Server: Save changes
+activate Server   
+    alt Save successfully
+        Server --> System: Changes Saved
+activate System
+        System --> User: Show success notification
+    else Save failed
+        Server --> System: Fail to save changes
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+end
+deactivate Server
+deactivate User
+@enduml

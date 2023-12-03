@@ -1,0 +1,117 @@
+@startuml TrackingandProcessingofwork
+actor Admin_Leader as User
+participant System
+participant Server
+ 
+activate User
+User -> System: Access "Tracking and Processing of Work" Screen
+activate System
+System -> User: Show Work List
+
+
+
+opt CURD Work
+
+opt Add new Work
+    User -> System: Click on "Add new Work" Button
+    System -> User: Show "Add new Work" Form
+    User -> System: Enter all required information for New Work
+    User -> System: Click "Save" button
+    System -> System: Check input 
+    alt Incorrect format or Missing input
+        System --> User: Show notification about wrong input format or missing input
+        System --> User: Ask User to re-enter information
+    else Correct format and all input filled
+activate Server   
+    System --> Server: Send request      
+deactivate System
+deactivate Server   
+
+    end
+end
+opt Edit Work information
+    User -> System: Choose an Work
+activate System
+    User -> System: Click on " Edit Work" Button
+    System -> User: Show "Edit Work" Form
+    User -> System: Update information for Work
+    User -> System: Click "Save" button
+    System -> System: Check input 
+    alt Incorrect format or Missing input
+        System --> User: Show notification about wrong input format or missing input
+        System --> User: Ask User to re-enter information
+    else Correct format and all input filled   
+activate Server   
+    System --> Server: Send request      
+deactivate System
+deactivate Server   
+    end
+end
+
+opt Delete Work
+    User -> System: Choose an Work
+activate System
+    User -> System: Click on " Delete Work" Button
+    System -> User: Show Confirmation Form
+    User -> System: Give decision
+    alt No
+        System--> User: Move User to "Work Management" Screen
+    else Yes
+activate Server   
+    System --> Server: Send request      
+deactivate System
+deactivate Server   
+
+    end
+end
+
+Server -> Server: Save changes
+activate Server
+    alt Save successfully
+        Server --> System: Changes Saved
+activate System
+        System --> User: Show success notification
+    else Save failed
+        Server --> System:Fail to save changes
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+end
+
+opt View status
+    User -> System: Click on "View Status" Button
+activate System
+    System -> User: Show detail information about the Work 
+    opt Feedback
+        User -> System: Enter feedback
+        User -> System: Click on "Submit" Button
+        System -> Server: Send request
+activate Server
+        Server -> Server: Save changes
+        Server -> System: Save Successfully
+deactivate Server
+        System -> User: Send successful notification
+deactivate System
+    end
+end
+
+opt Approve Work
+    User -> System: Choose Work
+activate System
+    opt Done Work but not approved yet
+         User -> System: Click on "Approve" Button to approve    
+    else Done and Approved Work  
+         User -> System: Click on "Unapprove" Button to unapprove approved Work
+    end
+    System -> Server: Send request
+activate Server
+    Server -> Server: Save changes
+    Server -> System: Save Successfully
+deactivate Server
+    System -> User: Send successful notification
+deactivate System
+end
+
+deactivate User
+@enduml

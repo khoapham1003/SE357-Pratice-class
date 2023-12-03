@@ -1,0 +1,25 @@
+@startuml ViewOutcomingDocumentdetail
+actor User as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Outcoming Document Management" Screen
+activate System
+User -> System: Choose Outcoming Document 
+System -> Server: Send request
+activate Server
+Server -> Server: Prepare Outcoming Document detail
+alt Detail found
+    Server --> System:Outcoming Document detail
+    System --> User: Show "Outcoming Document detail" on Screen
+    User --> System: View detail
+else Detail not found
+        Server --> System:Fail to show detail
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+deactivate User
+
+@enduml

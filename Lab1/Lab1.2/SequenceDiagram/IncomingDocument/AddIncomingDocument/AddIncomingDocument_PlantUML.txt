@@ -1,0 +1,33 @@
+@startuml AddIncomingDocument
+actor User as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Incoming Document Management" Screen
+activate System
+User -> System: Click on "Add Incoming Document" Button 
+System -> User: Show "Add Incoming Document" Form
+User -> System: Enter all required information for Incoming Document
+User -> System: Click "Save" button
+System -> System: Check input 
+alt Incorrect format or Missing input
+    System --> User: Show notification about wrong input format or missing input
+    System --> User: Ask User to re-enter information
+else Correct format and all input filled
+    System --> Server: Send request      
+activate Server
+    Server -> Server: Save changes
+    alt Save successfully
+        Server --> System: New Incoming Document Added
+        System --> User: Show success notification
+    else Save failed
+        Server --> System:Fail to Add New Incoming Document
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+end
+deactivate User
+
+@enduml

@@ -1,0 +1,43 @@
+@startuml DeleteIncomingDocument
+actor DocumentClerk as User
+actor AuthorizedOrganization as Authorized
+participant System
+participant Server
+
+activate User
+User -> System: Access "Incoming Document Management" Screen
+activate System
+User -> System: Click on "Delete Incoming Document" Button 
+deactivate User
+System -> Authorized: Send request to delete Document
+activate Authorized
+Authorized -> Authorized: Decision to delete
+alt No
+    Authorized --> System: No delete Document
+    System --> User: Show notification not accept Document deletion
+activate User
+deactivate User
+else Yes
+    Authorized --> System: Delete Document
+deactivate Authorized
+    System --> Server: Send request
+activate Server
+    Server -> Server: Save changes
+    alt Save successfully
+        Server --> System: Incoming Document Deleted
+        System --> User: Show success notification
+activate User
+activate Authorized
+        System --> Authorized: Show success notification
+    else Save failed
+        Server --> System:Fail to Delete Incoming Document
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate User
+        System --> Authorized: Show fail notification and reason
+deactivate Authorized
+deactivate System
+    end
+end
+
+@enduml

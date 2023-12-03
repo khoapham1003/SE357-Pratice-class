@@ -1,0 +1,33 @@
+@startuml DeleteFolder
+actor Admin_Leader_Clerk as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Folder Management" Screen
+activate System
+User -> System: Choose a Folder
+User -> System: Click on "Delete Folder" Button 
+System -> User: Show Confirmation Form
+User -> System: Give decision
+alt No
+    System--> User: Move User to "Folder Management" Screen
+deactivate User
+else Yes
+    System --> Server: Send request
+activate Server
+    Server -> Server: Save changes
+    alt Save successfully
+        Server --> System: New Folder Deleted
+        System --> User: Show success notification
+activate User
+    else Save failed
+        Server --> System:Fail to Delete New Folder
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+end
+deactivate User
+
+@enduml

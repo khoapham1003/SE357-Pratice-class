@@ -1,0 +1,24 @@
+@startuml OpenFolderCategory
+actor Admin_Leader_Clerk as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "FolderCategory Management" Screen
+activate System
+User -> System: Choose a currently Closed FolderCategory
+User -> System: Click on "Open" Button 
+System -> Server: Send request      
+activate Server
+    Server -> Server: Save changes
+    alt Open successfully
+        Server --> System: FolderCategory Opened
+        System --> User: Show success notification
+    else Open failed
+        Server --> System:Fail to Open FolderCategory 
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+end
+deactivate User
+@enduml

@@ -1,0 +1,25 @@
+@startuml Restorations
+actor Admin_Leader as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Restorations" Screen
+activate System
+User -> System: Choose file to apply Restoration 
+User -> System: Click on "Restore" Button
+
+System -> Server: Send request
+activate Server
+Server -> Server: Restorations
+alt Restore successfully
+    Server --> System: Restorations Done
+    System --> User: Show success notification
+else Restore failed
+    Server --> System:Fail to Restore
+deactivate Server
+    System --> User: Show fail notification and reason
+deactivate System
+end
+deactivate User
+@enduml

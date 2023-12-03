@@ -1,0 +1,26 @@
+@startuml ExportOutcomingDocument
+actor User as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Outcoming Document Management" Screen
+activate System
+User -> System: Click on "Export Outcoming Document" Button 
+
+System -> Server: Send request
+activate Server
+Server -> Server: Prepare for Export target file(Doc or Excel)
+alt Can Export
+    Server --> System: Outcoming Document target file Exported
+    System --> User: Show success notification
+    System --> User: Send Exported file
+else Can not Export
+    Server --> System: Fail to Export Outcoming Document
+deactivate Server
+    System --> User: Show fail notification and reason
+deactivate User
+deactivate System
+end
+
+@enduml

@@ -1,0 +1,43 @@
+@startuml DeleteOutcomingDocument
+actor DocumentClerk as User
+actor IssuingAgency as Issuing
+participant System
+participant Server
+
+activate User
+User -> System: Access "Outcoming Document Management" Screen
+activate System
+User -> System: Click on "Delete Outcoming Document" Button 
+deactivate User
+System -> Issuing: Send request to delete Document
+activate Issuing
+Issuing -> Issuing: Decision to delete
+alt No
+    Issuing --> System: No delete Document
+    System --> User: Show notification not accept Document deletion
+activate User
+deactivate User
+else Yes
+    Issuing --> System: Delete Document
+deactivate Issuing
+    System --> Server: Send request
+activate Server
+    Server -> Server: Save changes
+    alt Save successfully
+        Server --> System: Outcoming Document Deleted
+        System --> User: Show success notification
+activate User
+activate Issuing
+        System --> Issuing: Show success notification
+    else Save failed
+        Server --> System:Fail to Delete Outcoming Document
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate User
+        System --> Issuing: Show fail notification and reason
+deactivate Issuing
+deactivate System
+    end
+end
+
+@enduml

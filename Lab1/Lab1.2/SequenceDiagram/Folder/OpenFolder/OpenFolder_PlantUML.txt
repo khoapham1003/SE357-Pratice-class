@@ -1,0 +1,24 @@
+@startuml OpenFolder
+actor Admin_Leader_Clerk as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Folder Management" Screen
+activate System
+User -> System: Choose a currently Closed Folder
+User -> System: Click on "Open" Button 
+System -> Server: Send request      
+activate Server
+    Server -> Server: Save changes
+    alt Open successfully
+        Server --> System: Folder Opened
+        System --> User: Show success notification
+    else Open failed
+        Server --> System:Fail to Open Folder 
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+end
+deactivate User
+@enduml

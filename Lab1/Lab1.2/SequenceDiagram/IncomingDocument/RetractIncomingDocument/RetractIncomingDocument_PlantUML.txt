@@ -1,0 +1,43 @@
+@startuml RetractIncomingDocument
+actor DocumentClerk as User
+actor DocumentSender as Sender
+participant System
+participant Server
+
+activate User
+User -> System: Access "Incoming Document Management" Screen
+activate System
+User -> System: Click on "Retract Incoming Document" Button 
+deactivate User
+System -> Sender: Send request to retract Document
+activate Sender
+Sender -> Sender: Decision to retract
+alt No
+    Sender --> System: No retract Document
+    System --> User: Show notification not accept Document retraction
+activate User
+deactivate User
+else Yes
+    Sender --> System: Retract Document
+deactivate Sender
+    System --> Server: Send request
+activate Server
+    Server -> Server: Save changes
+    alt Save successfully
+        Server --> System: Set Incoming Document status to Retracted
+        System --> User: Show success notification
+activate User
+activate Sender
+        System --> Sender: Show success notification
+    else Save failed
+        Server --> System:Fail to Retract Incoming Document
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate User
+        System --> Sender: Show fail notification and reason
+deactivate Sender
+deactivate System
+    end
+end
+
+@enduml

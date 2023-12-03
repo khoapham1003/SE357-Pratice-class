@@ -1,0 +1,33 @@
+@startuml SignIn
+actor User as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Sign In" Screen
+activate System
+User -> System: Enter Username and Password
+User -> System: Click on "Sign In" button
+System -> System: Check input
+alt Incorrect format or Missing input
+    System --> User: Show notification about wrong input format or missing input
+    System --> User: Ask User to re-enter information
+else Correct format and all input filled
+    System --> Server: Send username and password
+    activate Server
+    Server -> Server: Authenticate username and password
+    alt Valid user
+        Server --> System: Accept Sign in
+        System --> User: Sign in Successful
+        System --> User: Move user to home screen
+    else Invalid user
+        Server --> System: Reject Sign in
+        deactivate Server
+        System --> User: Sign in Failed
+        System --> User: Ask to sign in again
+        deactivate System
+    end 
+end
+deactivate User
+
+@enduml

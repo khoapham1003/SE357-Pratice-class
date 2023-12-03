@@ -1,0 +1,32 @@
+@startuml ForwardIncomingDocument
+actor Leader as Leader
+actor Recipient as User
+participant System
+participant Server
+
+activate Leader
+Leader -> System: Access "Incoming Document Management" Screen
+activate System
+Leader -> System: Click on "Forward Incoming Document" Button 
+System -> Leader: Show "Forward Incoming Document" Form
+Leader -> System: Choose Unit or Officer to Forward Document to
+Leader -> System: Click on "Forward" Button
+System-> Server : Send requests
+activate Server
+Server -> Server: Prepare for Forwarding
+alt Forward successfully
+    Server --> System: Incoming Document Forwarded
+    System --> Leader: Show success notification
+    System --> User: Send notification about Forwarding
+activate User
+    User --> System: Send Forwarding Receive Notification
+deactivate User
+    System --> Leader: Show changed Forwarding status(Done) 
+else Forward failed
+    Server --> System: Fail message
+deactivate Server
+    System --> Leader: Show fail notification and reason
+deactivate Leader
+deactivate System
+end
+@enduml

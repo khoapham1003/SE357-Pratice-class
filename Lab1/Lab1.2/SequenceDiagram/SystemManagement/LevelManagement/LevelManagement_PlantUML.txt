@@ -1,0 +1,79 @@
+@startuml LevelManagement
+actor Admin_Leader as User
+participant System
+participant Server
+
+activate User
+User -> System: Access "Level Management" Screen
+activate System
+
+group CURD Level(Urgency,Security)
+
+opt Add new Urgency/Security Level
+    User -> System: Click on "Add new Urgency/Security Level"  Button
+    System -> User: Show "Add new Urgency/Security Level" Form
+    User -> System: Enter all required information for New Urgency/Security Level
+    User -> System: Click "Save" button
+    System -> System: Check input 
+    alt Incorrect format or Missing input
+        System --> User: Show notification about wrong input format or missing input
+        System --> User: Ask User to re-enter information
+    else Correct format and all input filled
+       System --> Server: Send request      
+activate Server 
+deactivate System
+deactivate Server
+    end
+end
+
+opt Edit Level information
+
+    User -> System: Choose an Level
+activate System
+    User -> System: Click on " Edit Urgency/Security Level" Button
+    System -> User: Show "Edit Urgency/Security Level" Form
+    User -> System: Update information for Level
+    User -> System: Click "Save" button
+    System -> System: Check input 
+    alt Incorrect format or Missing input
+        System --> User: Show notification about wrong input format or missing input
+        System --> User: Ask User to re-enter information
+    else Correct format and all input filled   
+       System --> Server: Send request      
+activate Server 
+deactivate System
+deactivate Server
+    end
+end
+
+opt Delete Urgency/Security Level
+    User -> System: Choose an Level
+activate System
+    User -> System: Click on " Delete Level" Button
+    System -> User: Show Confirmation Form
+    User -> System: Give decision
+    alt No
+        System--> User: Move User to "Level Management" Screen
+    else Yes
+       System --> Server: Send request      
+activate Server 
+deactivate System
+deactivate Server
+    end
+end
+    Server -> Server: Save changes
+activate Server   
+    alt Save successfully
+        Server --> System: Changes Saved
+activate System
+        System --> User: Show success notification
+    else Save failed
+        Server --> System: Fail to save changes
+deactivate Server
+        System --> User: Show fail notification and reason
+deactivate System
+    end
+end
+deactivate Server
+deactivate User
+@enduml
