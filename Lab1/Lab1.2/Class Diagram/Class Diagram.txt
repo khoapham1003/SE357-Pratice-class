@@ -26,6 +26,7 @@ note
 class Document {
 id
 document_number
+status
 issue_date
 issuing_agency
 document_type
@@ -99,6 +100,14 @@ class Folder{
 id
 folder_number
 name
+status
+retention_period
+}
+class FolderCategory{
+id
+folder_number
+name
+status
 retention_period
 }
 Document <|-- OutcomingDocument
@@ -107,7 +116,7 @@ Document "0..*" -- "0..*" Document: related to
 
 Document "0..*" o-- "1" DocumentLog: has
 Document "0..*" o-- "0..*" Folder: has
- 
+Folder "0..*" o-- "0..*" FolderCategory: has 
 FieldOfText "1" -- "0..*" Document::field_of_text
 DocumentType "1" -- "0..*" Document::document_type 
 IssuingAgency "1" -- "0..*" Document::issuing_agency 
