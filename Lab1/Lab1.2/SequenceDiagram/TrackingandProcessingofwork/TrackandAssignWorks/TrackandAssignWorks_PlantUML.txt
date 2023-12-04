@@ -1,4 +1,5 @@
-@startuml TrackingandProcessingofwork
+@startuml
+actor Assignee as Assignee
 actor Admin_Leader as User
 participant System
 participant Server
@@ -6,16 +7,14 @@ participant Server
 activate User
 User -> System: Access "Tracking and Processing of Work" Screen
 activate System
-System -> User: Show Work List
+System -> User: Show Work List to track
 
+group CURD Work
 
-
-opt CURD Work
-
-opt Add new Work
-    User -> System: Click on "Add new Work" Button
-    System -> User: Show "Add new Work" Form
-    User -> System: Enter all required information for New Work
+opt Create new Work/Assign Work
+    User -> System: Click on "Create new Work" Button
+    System -> User: Show "Create new Work" Form
+    User -> System: Enter all required information(including Assignee List) for New Work
     User -> System: Click "Save" button
     System -> System: Check input 
     alt Incorrect format or Missing input
@@ -23,12 +22,12 @@ opt Add new Work
         System --> User: Ask User to re-enter information
     else Correct format and all input filled
 activate Server   
-    System --> Server: Send request      
+    System --> Server: Send request    
 deactivate System
 deactivate Server   
-
     end
 end
+
 opt Edit Work information
     User -> System: Choose an Work
 activate System
@@ -42,9 +41,9 @@ activate System
         System --> User: Ask User to re-enter information
     else Correct format and all input filled   
 activate Server   
-    System --> Server: Send request      
+    System --> Server: Send request    
 deactivate System
-deactivate Server   
+deactivate Server    
     end
 end
 
@@ -58,25 +57,26 @@ activate System
         System--> User: Move User to "Work Management" Screen
     else Yes
 activate Server   
-    System --> Server: Send request      
+    System --> Server: Send request    
 deactivate System
 deactivate Server   
-
     end
 end
-
-Server -> Server: Save changes
+    Server -> Server: Save changes
 activate Server
     alt Save successfully
         Server --> System: Changes Saved
 activate System
         System --> User: Show success notification
+activate Assignee
+        System --> Assignee: Show notification about Assigned Works
+deactivate Assignee
     else Save failed
         Server --> System:Fail to save changes
 deactivate Server
         System --> User: Show fail notification and reason
 deactivate System
-    end
+    end  
 end
 
 opt View status
@@ -102,7 +102,7 @@ activate System
     opt Done Work but not approved yet
          User -> System: Click on "Approve" Button to approve    
     else Done and Approved Work  
-         User -> System: Click on "Unapprove" Button to unapprove approved Work
+         User -> System: Click on "Unapprove" Button to unapprove an approved Work
     end
     System -> Server: Send request
 activate Server

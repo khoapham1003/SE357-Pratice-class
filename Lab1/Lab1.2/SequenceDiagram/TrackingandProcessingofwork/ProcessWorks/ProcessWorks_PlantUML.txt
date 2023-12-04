@@ -1,0 +1,39 @@
+@startuml ProcessWorks
+actor Admin_Leader as User
+actor Assignee as Assignee
+participant System
+participant Server
+ 
+activate User
+User -> System: Access "Tracking and Processing of Work" Screen
+activate System
+System -> User: Show Work List to track
+User -> System: Assign Works for Assignees
+activate Server   
+System -> Server: Send request
+Server -> Server: Save changes
+Server -> System: Save Successfully
+deactivate Server
+System -> User: Send successful notification
+System -> Assignee: Forward to Assignees
+activate Assignee
+System -> Assignee: Send notification about forwarding      
+Assignee -> System: Confirm receipt of assignment notification
+Assignee -> Assignee: Process Works
+Assignee -> System: Submit Work
+deactivate Assignee
+System -> User: Send notification about Completed Assignment
+User -> System: Approve Work
+System -> Server: Send request
+activate Server
+    Server -> Server: Save changes
+    Server -> System: Save Successfully
+deactivate Server
+    System -> User: Send successful notification
+activate Assignee
+    System -> Assignee: Send notification about Approval
+deactivate Assignee
+deactivate System
+
+deactivate User
+@enduml
