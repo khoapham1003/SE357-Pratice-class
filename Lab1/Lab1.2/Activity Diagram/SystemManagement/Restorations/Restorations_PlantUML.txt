@@ -1,0 +1,24 @@
+@startuml
+|a| Admin_Leader
+|sys| system
+|ser| server
+|a|
+start
+:Access "Restorations" Screen;
+:Choose file to apply Restoration;
+:Click on "Restore" Button;
+|sys|
+:Send request;
+|ser|
+:Restoration;
+|sys|
+if(Check) then (Successfully)
+:Restorations Done;
+:Show success notification;
+else (Failed)
+:Fail to Restore;
+:Show error notification;
+endif
+
+stop
+@enduml

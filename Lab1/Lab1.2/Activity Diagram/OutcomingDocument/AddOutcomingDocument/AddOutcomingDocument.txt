@@ -1,0 +1,26 @@
+@startuml
+|a| Actor
+|sys| system
+|ser| server
+|a|
+start
+:Access "Outcoming Document" screen;
+:Click on "Add Outcoming Document";
+|sys|
+:Send "Add Outcoming Document" request;
+|ser|
+:Prepare add Outcoming Document form;
+|sys|
+:Show add Outcoming Document form;
+|a|
+:Enter full information for document;
+|sys|
+if(Check) then (Added)
+:New Outcoming Document Added(message);
+:Move to "Outcoming Document" screen;
+else (Cannot add new Outcoming Document)
+:Ask Add again;
+endif
+
+stop
+@enduml -

@@ -1,0 +1,33 @@
+@startuml
+|a| Admin_Leader_Clerk
+|sys| system
+|ser| server
+|a|
+start
+:Access "Folder Management" Screen;
+:Choose a Folder;
+:Click on "Delete Folder" Button;
+|sys|
+:Show Confirmation Form;
+|a|
+:Give desion;
+|sys|
+if (Check) then (No)
+:Move User to "Folder Management" Sreen;
+else (Yes)
+|sys|
+:Send request;
+|ser|
+:Save Changes;
+|sys|
+if(Check) then (Successfully)
+:New Folder Deleted;
+:Show success notification;
+else (Failed)
+:Fail to Deleted New Folder;
+:Show error notification;
+endif
+endif
+
+stop
+@enduml

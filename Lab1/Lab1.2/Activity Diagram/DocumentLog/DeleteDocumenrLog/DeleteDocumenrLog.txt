@@ -1,0 +1,26 @@
+@startuml
+|a| Admin_Leader_Clerk
+|sys| system
+|ser| server
+|a|
+start
+:Access "Documenr Log" screen;
+:Click on "Delete Documenr Log" button ;
+|sys|
+:Ask again(message);
+|sys| 
+if (Status) then (Agree)
+:Send "Delete" request;
+|ser|
+:Delete Documenr Log and Save changes;
+|sys|
+:Delete Successfully;
+:Move to "Documenr Log" Screen;
+else (Deny)
+|sys|
+:Move "Documenr Log" screen;
+endif
+
+
+stop
+@enduml

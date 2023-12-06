@@ -1,0 +1,32 @@
+@startuml
+|a| Actor
+|sys| system
+|ser| server
+|a|
+start
+:Access "Incoming Document" screen; 
+: Click on "Export Document" button ;
+|sys|
+:Send request;
+|ser|
+:Prepare document information;
+|sys|
+if (Check document) then (Valid document)
+:Request Successful;
+:Load Document information;
+|a|
+:Click "Export" button;
+|sys|
+:Export Processing;
+:Export successfully(message) ;
+:Move user to "Incoming Document" screen;
+else (Invalid document)
+:Request failed;
+:Show error notification;
+:Move user to "Incoming Document" screen;
+endif
+
+
+
+stop
+@enduml

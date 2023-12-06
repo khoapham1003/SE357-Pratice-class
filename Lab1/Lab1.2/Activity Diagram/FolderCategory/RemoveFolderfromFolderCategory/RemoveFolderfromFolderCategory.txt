@@ -1,0 +1,28 @@
+@startuml
+|a| Admin_Leader_Clerk
+|sys| system
+|ser| server
+|a|
+start
+:Access "Folder Management" Screen;
+:Choose FolderCategory;
+|sys|
+:Show Folder List of that FolderCategory;
+|a|
+:Choose Folder(s);
+:Click "Remove" Button;
+|sys|
+:Send request;
+|ser|
+:Save Changes;
+|sys|
+if(Check) then (Successfully)
+:Folder Removed;
+:Show success notification;
+else (Failed)
+:Fail to Remove Folder(s) from FolderCategory;
+:Show error notification;
+endif
+
+stop
+@enduml

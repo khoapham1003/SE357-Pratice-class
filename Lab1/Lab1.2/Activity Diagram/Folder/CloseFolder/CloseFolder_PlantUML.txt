@@ -1,0 +1,24 @@
+@startuml
+|a| Admin_Leader_Clerk
+|sys| system
+|ser| server
+|a|
+start
+:Access "Folder Management" Screen;
+:Choose a currently Opened Folder;
+:Click on "Close" Button;
+|sys|
+:Send request;
+|ser|
+:Save Changes;
+|sys|
+if(Check) then (Successfully)
+:Folder Closed;
+:Show success notification;
+else (Failed)
+:Fail to Folder Closed;
+:Show error notification;
+endif
+
+stop
+@enduml

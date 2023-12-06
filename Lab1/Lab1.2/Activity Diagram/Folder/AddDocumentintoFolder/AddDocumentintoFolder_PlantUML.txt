@@ -1,0 +1,29 @@
+@startuml
+|a| Admin_Leader_Clerk
+|sys| system
+|ser| server
+|a|
+start
+:Access "Folder Management" Screen;
+:Choose Folder;
+:Click "Add Document into Folder" Button;
+|sys|
+:Show Document List;
+|a|
+:Choose Document(s) to add into folder;
+:Click "Save" Button;
+|sys|
+:Send request;
+|ser|
+:Save Changes;
+|sys|
+if(Check) then (Successfully)
+:Document added into Folder;
+:Show success notification;
+else (Failed)
+:Fail to Add Document(s) into Folder;
+:Show error notification;
+endif
+
+stop
+@enduml

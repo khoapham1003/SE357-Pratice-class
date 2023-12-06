@@ -1,0 +1,26 @@
+@startuml
+|a| Actor
+|sys| system
+|ser| server
+|a|
+start
+:Access "Document Log" screen;
+|sys|
+:Send "View Documents in Document Log" request;
+|ser|
+:Prepare document information;
+|sys|
+if(Check) then (Valid document)
+:Request Successful;
+:Document information;
+:Show document information on screen;
+else (Invalid document)
+|sys|
+:Request failed;
+:Show error notification;
+
+
+endif
+
+stop
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+|a| Leader_Clerk
+|sys| system
+|ser| server
+|a|
+start
+:Access "Incoming Document" screen;
+:Click on "Update Incoming Document";
+|sys|
+:Send "Update Incoming Document" request;
+|ser|
+:Prepare update Incoming Document form;
+|sys|
+:Show update Incoming Document form;
+|a|
+:Enter full information for document;
+|sys|
+if(Check) then (Updated)
+:Incoming Document Updated(message);
+:Move to "Incoming Document" screen;
+else (Cannot update Incoming Document)
+:Ask Update again;
+endif
+
+stop
+@enduml -

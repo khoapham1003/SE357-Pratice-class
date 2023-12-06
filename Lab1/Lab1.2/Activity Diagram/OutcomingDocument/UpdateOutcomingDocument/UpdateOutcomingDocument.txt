@@ -1,0 +1,26 @@
+@startuml
+|a| Leader_Clerk
+|sys| system
+|ser| server
+|a|
+start
+:Access "Outcoming Document" screen;
+:Click on "Update Outcoming Document";
+|sys|
+:Send "Update Outcoming Document" request;
+|ser|
+:Prepare update Outcoming Document form;
+|sys|
+:Show update Outcoming Document form;
+|a|
+:Enter full information for document;
+|sys|
+if(Check) then (Updated)
+:Outcoming Document Updated(message);
+:Move to "Outcoming Document" screen;
+else (Cannot update Outcoming Document)
+:Ask Update again;
+endif
+
+stop
+@enduml -

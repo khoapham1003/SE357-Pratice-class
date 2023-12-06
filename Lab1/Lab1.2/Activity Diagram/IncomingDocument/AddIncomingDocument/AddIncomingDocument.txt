@@ -1,0 +1,26 @@
+@startuml
+|a| Actor
+|sys| system
+|ser| server
+|a|
+start
+:Access "Incoming Document" screen;
+:Click on "Add Incoming Document";
+|sys|
+:Send "Add Incoming Document" request;
+|ser|
+:Prepare add Incoming Document form;
+|sys|
+:Show add Incoming Document form;
+|a|
+:Enter full information for document;
+|sys|
+if(Check) then (Added)
+:New Incoming Document Added(message);
+:Move to "Incoming Document" screen;
+else (Cannot add new incoming document)
+:Ask Add again;
+endif
+
+stop
+@enduml

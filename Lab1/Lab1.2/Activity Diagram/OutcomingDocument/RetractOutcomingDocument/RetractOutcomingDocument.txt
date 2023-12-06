@@ -1,0 +1,28 @@
+@startuml
+|a| Actor
+|sys| system
+|ser| server
+|a|
+start
+:Access "Outcoming Document" screen; 
+:Click on any document which was forwarded;
+: Click on "Retract Document" button ;
+|sys|
+:Send request;
+|ser|
+:Retract document;
+|sys|
+if (Check document) then (Valid document)
+:Request Successful;
+:Retract successfully(message) ;
+:Move user to "Outcoming Document" screen;
+else (Invalid document)
+:Request failed;
+:Show error notification;
+:Move user to "Outcoming Document" screen;
+endif
+
+
+
+stop
+@enduml

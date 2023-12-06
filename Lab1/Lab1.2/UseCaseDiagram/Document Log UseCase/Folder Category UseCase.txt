@@ -1,0 +1,29 @@
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+actor Clerk as Clerk
+actor Admin as Admin
+actor Staff as Staff
+actor Leader as Leader
+
+rectangle "Document management system_Document Log" {
+
+Admin -up-> (Create Document Log)
+Admin -up-> (Edit Document Log information)
+Admin -up-> (Delete Documenr Log)
+Admin -up-> (View Documents in DocumentLog)
+
+Leader -up-> (Create Document Log)
+Leader -up-> (Edit Document Log information)
+Leader -up-> (Delete Documenr Log)
+Leader -up-> (View Documents in DocumentLog)
+
+Clerk --> (Create Document Log)
+Clerk --> (Edit Document Log information)
+Clerk --> (Delete Documenr Log)
+Clerk --> (View Documents in DocumentLog)
+
+Staff --> (View Documents in DocumentLog)
+
+}

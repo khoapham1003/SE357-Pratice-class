@@ -1,0 +1,26 @@
+@startuml
+|a| Actor
+|sys| system
+|ser| server
+|a|
+start
+:Access "Outcoming Document" screen;
+:Choose any document in "Outcoming Document" screen;
+|sys|
+:Send "View detail document" request;
+|ser|
+:Prepare detail Outcoming document;
+|sys|
+if(Check) then (Valid )
+:Request Successful;
+:Show detail outcoming document on screen;
+else (Invalid)
+|sys|
+:Request failed;
+:Show error notification;
+
+
+endif
+
+stop
+@enduml -

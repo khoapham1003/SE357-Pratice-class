@@ -1,0 +1,26 @@
+@startuml
+|a| Admin
+|sys| system
+|ser| server
+|a|
+start
+:Access "Folder Category" screen;
+:Click on "Delete Folder Category" button ;
+|sys|
+:Ask again(message);
+|sys| 
+if (Status) then (Deny)
+|sys|
+:Move "Folder Category" screen;
+else (Agree)
+:Send "Delete" request;
+|ser|
+:Delete Folder Category and Save changes;
+|sys|
+:Delete Successfully;
+:Move to "Folder Category" Screen;
+endif
+
+
+stop
+@enduml

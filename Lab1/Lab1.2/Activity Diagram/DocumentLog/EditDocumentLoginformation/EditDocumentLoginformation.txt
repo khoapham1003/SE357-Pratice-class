@@ -1,0 +1,23 @@
+@startuml
+a Admin_Leader_Employee
+sys system
+ser server
+a
+start
+Access Document Log screen; 
+Change information that needs to be updated;
+Click on Update Document Log information button;
+sys
+Send Update Document Log information request;
+ser
+check format;
+sys
+if(Check format) then (Request Successful)
+sys
+Show updated information on Document Log Information screen;
+else (Format is correct)
+Show error notification;
+endif
+
+stop
+@enduml

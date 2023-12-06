@@ -1,0 +1,23 @@
+@startuml
+|a| User
+|sys| system
+|ser| server
+|a|
+start
+:Access "Folder Category" screen;
+:Click on any "Folder Category";
+|sys|
+:Send "View all document" request;
+|ser|
+:Prepare view all document in folder category;
+|sys|
+if(Check) then (Valid)
+:Request Successful;
+:Show all document in folder category on screen;
+else (Invalid)
+:Request failed;
+:Show error notification;
+endif
+
+stop
+@enduml -

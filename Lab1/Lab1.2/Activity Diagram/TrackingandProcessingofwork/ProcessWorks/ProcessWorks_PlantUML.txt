@@ -1,0 +1,41 @@
+@startuml
+|a| Admin_Leader
+|a1| Assignee
+|sys| system
+|ser| server
+
+|a|
+start
+:Access "Tracking and Processing of Work" Screen;
+|sys|
+:Show Work List to Track;
+|a|
+:Assign Works for Assignees;
+|sys|
+:Send request;
+|ser|
+:Save Changes;
+|sys|
+:Save Successfully;
+:Send successful notification;
+:Forward to Assignees;
+:Send notification about forwarding;
+|a1|
+:Confirm receipt of assignment notification;
+:Process Work;
+:Submit Work;
+|sys|
+:Send notification about Completed Assignment;
+|a|
+:Approve Work;
+|sys|
+:Send request;
+|ser|
+:Save changes;
+|sys|
+:Save Successfully;
+:Send sucessful notification to Admin_Leader;
+:Send notification about Approval to Assignees;
+
+stop
+@enduml

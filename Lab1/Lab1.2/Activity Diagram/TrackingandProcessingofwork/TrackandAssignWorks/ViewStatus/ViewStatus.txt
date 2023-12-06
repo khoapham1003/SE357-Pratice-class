@@ -1,0 +1,30 @@
+@startuml
+|a| Admin_Leader
+|sys| system
+|ser| server
+|a|
+start
+:Access "Track and Assign Works" Screen;
+|sys|
+:Show Work List to track Form;
+|a|
+:Click on "View Status" Button;
+|sys|
+:Show detail information about the Work;
+|a|
+:Enter feedback;
+:Click on "Submit" Button;
+|sys|
+:Send request;
+|ser|
+:Save Changes;
+|sys|
+if(Check) then (Successfully)
+:Changes Saved;
+:Show success notification;
+else (Failed)
+:Fail to Save Changes;
+:Show error notification;
+endif
+stop
+@enduml

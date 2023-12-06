@@ -1,0 +1,41 @@
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+actor Clerk as Clerk
+actor Admin as Admin
+actor Staff as Staff
+actor Leader as Leader
+
+rectangle "Document management system_System Management " {
+
+Admin -up-> (Document Type Management)
+Admin -up-> (Issuing Agency Management)
+Admin -up-> (Field of Text Management)
+Admin -up-> (Position Management)
+Admin -up-> (Level Management {Urgency,Security})
+Admin -up-> (User Management)
+Admin -up-> (Access Group Management)
+Admin -up-> (Personal Account Management)
+Admin -up-> (Backups)
+Admin -up-> (Restorations)
+
+
+Leader --> (Document Type Management)
+Leader --> (Issuing Agency Management)
+Leader --> (Field of Text Management)
+Leader --> (Position Management)
+Leader --> (Level Management {Urgency,Security})
+Leader --> (User Management)
+Leader --> (Access Group Management)
+Leader --> (Personal Account Management)
+Leader --> (Backups)
+Leader --> (Restorations)
+
+
+Clerk -up-> (Personal Account Management)
+
+
+Staff --> (Personal Account Management)
+
+}

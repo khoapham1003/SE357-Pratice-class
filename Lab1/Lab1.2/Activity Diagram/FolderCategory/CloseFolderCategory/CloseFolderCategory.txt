@@ -1,0 +1,18 @@
+@startuml
+|a| User
+|sys| system
+|ser| server
+|a|
+start
+:Access "Folder Category" screen;
+:Click on "Close Folder Category" button ;
+|sys|
+:Send "Close" request;
+|ser|
+:Prepare Folder Category;
+:Don't Allow add folder;
+|sys|
+:Show folder list;
+
+stop
+@enduml

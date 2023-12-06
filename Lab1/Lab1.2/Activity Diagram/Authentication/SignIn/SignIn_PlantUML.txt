@@ -1,0 +1,29 @@
+@startuml
+|a| Actor
+|sys| system
+|ser| server
+|a|
+start
+:Enter username and password; 
+:Click on "Sign in" button;
+|sys|
+if(Check format) then (Format is incorrect)
+:Wrong format(message);
+else (Format is correct)
+:Send username and password;
+|ser|
+:Authenticate username and password;
+|sys|
+if(Check user) then (Valid user)
+:Accept Sign in;
+:Sign in Successful(message);
+:Move user to home screen;
+else (Invalid user)
+:Reject Sign in;
+:Sign in Failed(message) ;
+:Ask sign in again;
+endif
+endif
+
+stop
+@enduml

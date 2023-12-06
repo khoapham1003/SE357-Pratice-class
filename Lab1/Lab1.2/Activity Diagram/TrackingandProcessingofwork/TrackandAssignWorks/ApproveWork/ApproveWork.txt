@@ -1,0 +1,29 @@
+@startuml
+|a| Admin_Leader
+|sys| system
+|ser| server
+|a|
+start
+:Access "Track and Assign Works" Screen;
+|sys|
+:Show Work List to track Form;
+|a|
+:Choose Work;
+if(check) then (Done Work but not approved yet)
+:Click on "Approve" Button to Approve;
+else (Done and Approved Work)
+:Click on "Unapprove" Button to unapprove an approved Work;
+|sys|
+:Send request;
+|ser|
+:Save Changes;
+|sys|
+if(Check) then (Successfully)
+:Changes Saved;
+:Show success notification;
+else (Failed)
+:Fail to Save Changes;
+:Show error notification;
+endif
+stop
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+actor Clerk as Clerk
+actor Admin as Admin
+actor Staff as Staff
+actor Leader as Leader
+
+rectangle "Document management system_Incoming Document" {
+
+
+Admin -up-> (Forward Processing Incoming Document)
+Admin -up-> (Add Incoming Document)
+Admin -up-> (Update Incoming Document information)
+Admin -up-> (Delete Incoming Document)
+Admin -up-> (View Incoming Document detail)
+Admin -up-> (Export Incoming Document)
+Admin -up-> (Add Incoming Document into Document Log)
+Admin -up-> (Retract Incoming Document)
+
+Leader -up-> (Forward Processing Incoming Document)
+Leader -up-> (Add Incoming Document)
+Leader -up-> (Update Incoming Document information)
+Leader -up-> (Delete Incoming Document)
+Leader -up-> (View Incoming Document detail)
+Leader -up-> (Export Incoming Document)
+Leader -up-> (Add Incoming Document into Document Log)
+Leader -up-> (Retract Incoming Document)
+
+Clerk --> (Add Incoming Document)
+Clerk --> (Update Incoming Document information)
+Clerk --> (Delete Incoming Document)
+Clerk --> (View Incoming Document detail)
+Clerk --> (Export Incoming Document)
+Clerk --> (Add Incoming Document into Document Log)
+Clerk --> (Retract Incoming Document)
+
+Staff --> (View Incoming Document detail)
+Staff --> (Export Incoming Document)
+}

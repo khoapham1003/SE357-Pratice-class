@@ -1,0 +1,14 @@
+@startuml
+|a| Admin_Leader_Clerk
+|sys| system
+|ser| server
+|a|
+start
+:Access "Folder Management" Screen;
+:Choose Folder;
+|sys|
+:Show Document List of that Folder;
+
+
+stop
+@enduml

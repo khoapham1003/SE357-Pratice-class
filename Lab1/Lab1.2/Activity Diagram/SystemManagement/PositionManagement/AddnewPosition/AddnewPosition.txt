@@ -1,0 +1,34 @@
+@startuml
+|a| Admin_Leader
+|sys| system
+|ser| server
+|a|
+start
+:Access "Position Management" Screen;
+
+:Click on "Add new Position" Button;
+|sys|
+:Show "Add new Position" Form;
+|a|
+:Enter all required information for New Position;
+:Click on "Save" Button;
+|sys|
+if (Check input) then (Incorrect format or Missing Input)
+:Show notification about wrong input format or missing input;
+:Ask User to re-enter information;
+else (Correct format and all input filled)
+|sys|
+:Send request;
+|ser|
+:Save Changes;
+|sys|
+if(Check) then (Successfully)
+:Changes Saved;
+:Show success notification;
+else (Failed)
+:Fail to Save Changes;
+:Show error notification;
+endif
+endif
+stop
+@enduml

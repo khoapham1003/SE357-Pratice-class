@@ -1,0 +1,37 @@
+@startuml
+|a| Admin_Leader
+|a1| Assignee
+|sys| system
+|ser| server
+|a|
+start
+:Access "Track and Assign Works" Screen;
+|sys|
+:Show Work List to track Form;
+|a|
+:Choose a Work;
+:Click on "Delete Work" Button;
+|sys|
+:Show Confirmation Form;
+|a|
+:Give desion;
+|sys|
+if (Check) then (No)
+:Move User to "Track and Assign Work" Sreen;
+else (Yes)
+|sys|
+:Send request;
+|ser|
+:Save Changes;
+|sys|
+if(Check) then (Successfully)
+:Changes Saved;
+:Show success notification to Leader_Admin;
+:Show notification about Assigned Works to Assignee;
+else (Failed)
+:Fail to Save Changes;
+:Show error notification;
+endif
+endif
+stop
+@enduml

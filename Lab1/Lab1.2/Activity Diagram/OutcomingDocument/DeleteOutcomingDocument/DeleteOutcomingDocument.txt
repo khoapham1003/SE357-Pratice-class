@@ -1,0 +1,28 @@
+@startuml
+|a| Actor
+|sys| system
+|ser| server
+
+|a|
+start
+:Access "Outcoming Document" screen;
+:Choose any document in "Outcoming Document" screen;
+:Click on "Delete Document" button ;
+|sys|
+:Ask again(message);
+|sys| 
+if (Status) then (Deny)
+|sys|
+:Move "Outcoming Document" screen;
+else (Agree)
+:Send "Delete" request;
+|ser|
+:Delete Document and Save changes;
+|sys|
+:Delete Successfully;
+:Move "Outcoming Document" screen;
+endif
+
+
+stop
+@enduml

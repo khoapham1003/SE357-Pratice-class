@@ -1,9 +1,0 @@
-@startuml
-start
-:Admin logined;
-:Admin create new account for new staff;
-:Admin fill information of staff;
-:Admin click "create";
-:System save information;
-stop
-@enduml

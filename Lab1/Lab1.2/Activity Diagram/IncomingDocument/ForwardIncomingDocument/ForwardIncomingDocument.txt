@@ -1,0 +1,28 @@
+@startuml
+|a| Admin_Leader
+|sys| system
+|ser| server
+|a|
+start
+:Access "Incoming Document" screen; 
+: Click on "Forward Document" button ;
+|sys|
+:Send request;
+|ser|
+:Prepare document information;
+|sys|
+if (Check document) then (Valid document)
+:Request Successful;
+:Forward Document information;
+:Forward successfully(message) ;
+:Move user to "Incoming Document" screen;
+else (Invalid document)
+:Request failed;
+:Show error notification;
+:Move user to "Incoming Document" screen;
+endif
+
+
+
+stop
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+|a| Actor
+|sys| system
+|ser| server
+|a|
+start
+:Access "Folder Category" screen;
+:Click on "Add Folder";
+|sys|
+:Send "Add Folder" request;
+|ser|
+:Prepare add Folder Category;
+|sys|
+if(Check) then (Added)
+:New Folder Added(message);
+:Move to "Folder Category" screen;
+else (Cannot add new incoming document)
+:Ask Add again;
+endif
+
+stop
+@enduml

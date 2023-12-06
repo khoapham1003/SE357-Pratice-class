@@ -1,0 +1,25 @@
+@startuml
+|a| Admin_Leader
+|sys| system
+|ser| server
+|a|
+start
+:Access "Backups" Screen;
+:Choose file to backups;
+:Click on "Backup" Button;
+|sys|
+:Send request;
+|ser|
+:Backup to destination file;
+|sys|
+if(Check) then (Successfully)
+:Backup Done;
+:Show success notification;
+else (Failed)
+:Fail to Backup;
+:Show error notification;
+endif
+
+
+stop
+@enduml

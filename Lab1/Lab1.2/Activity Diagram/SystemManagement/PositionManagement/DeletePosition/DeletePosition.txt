@@ -1,0 +1,32 @@
+@startuml
+|a| Admin_Leader
+|sys| system
+|ser| server
+|a|
+start
+:Access "Position Management" Screen;
+:Choose an Position;
+:Click on "Delete Position" Button;
+|sys|
+:Show Confirmation Form;
+|a|
+:Give desion;
+|sys|
+if (Check) then (No)
+:Move User to "Position Management" Sreen;
+else (Yes)
+|sys|
+:Send request;
+|ser|
+:Save Changes;
+|sys|
+if(Check) then (Successfully)
+:Changes Saved;
+:Show success notification;
+else (Failed)
+:Fail to Save Changes;
+:Show error notification;
+endif
+endif
+stop
+@enduml

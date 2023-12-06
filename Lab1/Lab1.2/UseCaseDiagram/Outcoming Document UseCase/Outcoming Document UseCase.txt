@@ -1,0 +1,40 @@
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+actor Clerk as Clerk
+actor Admin as Admin
+actor Staff as Staff
+actor Leader as Leader
+
+rectangle "Document management system_Outcoming Document" {
+
+Admin -up-> (Forward Processing Outcoming Document)
+Admin -up-> (Add Outcoming Document)
+Admin -up-> (Update Outcoming Document information)
+Admin -up-> (Delete Outcoming Document)
+Admin -up-> (View Outcoming Document detail)
+Admin -up-> (Export Outcoming Document)
+Admin -up-> (Add Outcoming Document into Document Log)
+Admin -up-> (Retract Outcoming Document)
+
+Leader -up-> (Forward Processing Outcoming Document)
+Leader -up-> (Add Outcoming Document)
+Leader -up-> (Update Outcoming Document information)
+Leader -up-> (Delete Outcoming Document)
+Leader -up-> (View Outcoming Document detail)
+Leader -up-> (Export Outcoming Document)
+Leader -up-> (Add Outcoming Document into Document Log)
+Leader -up-> (Retract Outcoming Document)
+
+Clerk --> (Add Outcoming Document)
+Clerk --> (Update Outcoming Document information)
+Clerk --> (Delete Outcoming Document)
+Clerk --> (View Outcoming Document detail)
+Clerk --> (Export Outcoming Document)
+Clerk --> (Add Outcoming Document into Document Log)
+Clerk --> (Retract Outcoming Document)
+
+Staff --> (View Outcoming Document detail)
+Staff --> (Export Outcoming Document)
+}

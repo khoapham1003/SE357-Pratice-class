@@ -1,0 +1,32 @@
+@startuml
+|a| User
+|sys| system
+|ser| server
+|a|
+start
+:Access "Folder Category" screen;
+:Click on "Create Folder Category";
+|sys|
+:Send "Create folder category" request;
+|ser|
+:Prepare create folder category form;
+|sys|
+:Show folder category form;
+|a|
+:Enter information for folder category;
+:Click on "Save";
+|sys|
+:Send "Create new folder category" request;
+|ser|
+:Save Changes;
+|sys|
+if(Check) then (Folder Category Added)
+:New Folder Category Added(message);
+:Move to "Folder Category List" screen;
+else (Cannot create new folder Category)
+:Show error notification;
+:Ask Create again;
+endif
+
+stop
+@enduml -

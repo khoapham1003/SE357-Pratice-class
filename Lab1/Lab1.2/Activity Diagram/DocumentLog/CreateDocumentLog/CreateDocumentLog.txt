@@ -1,0 +1,25 @@
+@startuml
+|a| User
+|sys| system
+|ser| server
+|a|
+start
+:Access "Folder Category" screen;
+:Click on "Create Document Log";
+|sys|
+:Send "Create Document Log" request;
+|ser|
+:Prepare create Document Log;
+|sys|
+:Show Document Log;
+|sys|
+if(Check) then (Folder Category Added)
+:New Document Log Added(message);
+:Move to "Folder Category List" screen;
+else (Cannot create new folder Category)
+:Show error notification;
+:Ask Create again;
+endif
+
+stop
+@enduml -
