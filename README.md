@@ -14,14 +14,16 @@ XÂY DỰNG HỆ THỐNG HỖ TRỢ QUẢN LÝ CÔNG VĂN
 
 **Description**:  
 
-Văn bản, công văn là một trong những yếu tố cần thiết nhất trong hoạt động quản lý của bất kỳ cơ quan nào. Đây là phương tiện giao tiếp, truyền đạt chỉ thị quan trọng trong việc quản lý và phát triển xã hội. 
+Documents are one of the most essential elements in the management activities of any organization. They are an important means of communication and transmission of instructions in the management and development of society.
 
-Quản lý công văn là quá trình lưu trữ, kiểm tra, quản lý việc đi – đến của công văn. Phần mềm quản lý công văn được hiểu đơn giản là công cụ hỗ trợ quá trình quản lý này diễn ra trơn tru, hiện đại hơn.
+Document management is the process of storing, checking, and managing the coming and going of documents. Document management software is simply understood as a tool to support this management process to run smoothly and more modernly. 
 
-Hệ thống hỗ trợ quản lý công văn sẽ giúp tự động hóa quy trình quản lý công văn bằng cách tự động phân loại, thu nhập dữ liệu,  theo dõi, xử lý ,lưu trữ từ đó giúp tiết kiệm thòi gian và công sức cho nhân viên văn thư. Ngoài ra, hệ thống này còn tăng cường tính minh bạch vả cải thiện khả năng truy xuất cho người dùng. Và cuối cùng là nâng cao tính bảo mật cho quy trình bảo quản công văn, tránh thất thoát hoặc rò rỉ.
+The document management support system will help automate the document management process by automatically classifying, inputting data, tracking, processing, and storing, thereby saving time and effort for the clerk. In addition, this system also enhances transparency and improves accessibility for users. Finally, it enhances the security of the document preservation process, preventing loss or leakage. 
 
-**How to use**:
-Hệ thống bổ trợ các chức năng quản lý văn bản đến và đi theo đúng Nghị định 30/2020/NĐ-CP về công tác văn thư của Chính Phủ. Ngoài ra còn bổ trợ cho người dùng các tính năng nhằm tăng hiệu suất cho quá trình quản lý các loại công văn theo từng cơ quan, tổ chức như phân quyền sử dụng, lập các danh mục hồ sơ cũng như hồ sơ điện tử. 
+**How to use**: 
+
+The system supplements the functions of managing incoming and outgoing documents in accordance with “Nghị định 30/2020/NĐ-CP về công tác văn thư của Chính Phủ”. In addition, it also supplements users with features to improve the efficiency of the process of managing various types of documents according to each agency or organization, such as user permissions, creating folder category as well as folder.
+
 
 **Additional information**:
 
