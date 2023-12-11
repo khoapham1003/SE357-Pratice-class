@@ -1,25 +1,33 @@
 @startuml
-|a| User
+|a| Actor
 |sys| system
 |ser| server
 |a|
 start
-:Access "Folder Category" screen;
-:Click on "Create Document Log";
+:Access "Document Log Management" screen;
+:Click on "Create Document Log" Button;
 |sys|
-:Send "Create Document Log" request;
+:Show "Create Document Log" form;
+|a|
+:Enter all required information for Document Log;
+:Click "Save" button;
+|sys|
+if(Check) then (Incorrect format or Missing input)
+:Show notification about wrong input format or missing input;
+:Ask User to re-enter information;
+else (Correct format and all input filled)
+:Send request;
 |ser|
-:Prepare create Document Log;
+:Save changes;
 |sys|
-:Show Document Log;
-|sys|
-if(Check) then (Folder Category Added)
-:New Document Log Added(message);
-:Move to "Folder Category List" screen;
-else (Cannot create new folder Category)
-:Show error notification;
-:Ask Create again;
+if(Check) then (Successful)
+:New Document Log Created;
+:Show success notification;
+else (Failed)
+:Fail to Create New Document Log;
+:Show failed notification and reason;
+endif
 endif
 
 stop
-@enduml -
+@enduml

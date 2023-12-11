@@ -1,0 +1,20 @@
+@startuml
+|a| User
+|sys| system
+|a|
+start
+:Click on "Sign Out" Button;
+|sys|
+:Show Confirmation form;
+|a|
+:Give desion;
+|sys|
+:Send request;
+if(Check) then (Yes)
+:Move User to Home Screen;
+else (No)
+:Move User to "Sign In" Screen;
+endif
+
+stop
+@enduml

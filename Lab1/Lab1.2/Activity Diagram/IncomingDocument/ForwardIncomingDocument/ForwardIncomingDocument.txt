@@ -1,28 +1,34 @@
 @startuml
-|a| Admin_Leader
+|a| Leader
+|a1| Recipient
 |sys| system
 |ser| server
 |a|
 start
-:Access "Incoming Document" screen; 
-: Click on "Forward Document" button ;
+:Access "Incoming Document Management" screen;
+:Click on "Forward Incoming Document" Button;
+|sys|
+:Show "Forward Incoming Document" form;
+|a|
+:Choose Unit or Officer to Forward Document to;
+:Click "Forward" button;
 |sys|
 :Send request;
 |ser|
-:Prepare document information;
+:Prepare for Forwarding;
 |sys|
-if (Check document) then (Valid document)
-:Request Successful;
-:Forward Document information;
-:Forward successfully(message) ;
-:Move user to "Incoming Document" screen;
-else (Invalid document)
-:Request failed;
-:Show error notification;
-:Move user to "Incoming Document" screen;
+if(Check) then (Successful)
+:Incoming Document Forwarded;
+:Show success notification;
+:Send notification about Forwarding to Recipient;
+|a1|
+:Send Forwarding Receive Notification;
+|sys|
+:Show changed Forwarding status(Done);
+else (Failed)
+:Fail message;
+:Show failed notification and reason;
 endif
-
-
 
 stop
 @enduml

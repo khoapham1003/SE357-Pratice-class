@@ -4,11 +4,11 @@
 |ser| server
 |a|
 start
-:Access "Incoming Document Management" screen;
-:View Unlogged Incoming Document;
-:Click on "Add to Incoming Log" Button;
+:Access "Outcoming Document Management" screen;
+:View Unlogged Outcoming Document;
+:Click on "Add to Outcoming Log" Button;
 |sys|
-:Show "Add to Incoming Document Log" form;
+:Show "Add to Outcoming Document Log" form;
 |a|
 :Choose Log from list;
 :Click "Add" button;
@@ -18,7 +18,7 @@ start
 :Save changes;
 |sys|
 if(Check) then (Successful)
-:Incoming Document Added into Document Log;
+:Outcoming Document Added into Document Log;
 :Show success notification;
 else (Failed)
 :Fail to Add to Document Log;
