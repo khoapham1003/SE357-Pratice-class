@@ -2,34 +2,12 @@
 
 left to right direction
 skinparam packageStyle rectangle
-actor Clerk as Clerk
-actor Admin as Admin
-actor Staff as Staff
-actor Leader as Leader
+actor User as User
 
 rectangle "Document management system_Authentication " {
 
-Admin -up-> (Sign in)
-Admin -up-> (Sign out)
-Admin -up-> (Forgot Password)
-Admin -up-> (Change Password)
-
-Leader -up-> (Sign in)
-Leader -up-> (Sign out)
-Leader -up-> (Forgot Password)
-Leader -up-> (Change Password)
-
-
-
-Clerk --> (Sign in)
-Clerk --> (Sign out)
-Clerk --> (Forgot Password)
-Clerk --> (Change Password)
-
-
-Staff --> (Sign in)
-Staff --> (Sign out)
-Staff --> (Forgot Password)
-Staff --> (Change Password)
-
+User -- (Sign in)
+User -- (Sign out)
+User -- (Forgot Password)
+User -- (Change Password)
 }

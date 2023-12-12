@@ -10,16 +10,16 @@ actor Leader as Leader
 rectangle "Document management system_Tracking and Processing of Work" {
 
 
-Admin --> (Process Works)
-Admin --> (Track and Assign Works)
+Admin -- (Process Works)
+Admin -- (Track and Assign Works)
 
-Leader -up-> (Track and Assign Works)
-Leader -up-> (Process Works)
-
-
-Clerk -up-> (Process Works)
+Leader -up- (Track and Assign Works)
+Leader -up- (Process Works)
 
 
-Staff --> (Process Works)
+Clerk -up- (Process Works)
+
+
+Staff -- (Process Works)
 
 }
