@@ -11,7 +11,7 @@ group CURD FieldofText
 
 opt Add new FieldofText
     User -> System: Click on "Add new FieldofText" Button
-    System -> User: Show "Add new FieldofText" Form
+    System --> User: Show "Add new FieldofText" Form
     User -> System: Enter all required information for New FieldofText
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -31,7 +31,7 @@ opt Edit FieldofText information
     User -> System: Choose an FieldofText
 activate System
     User -> System: Click on " Edit FieldofText" Button
-    System -> User: Show "Edit FieldofText" Form
+    System --> User: Show "Edit FieldofText" Form
     User -> System: Update information for FieldofText
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -50,7 +50,7 @@ opt Delete FieldofText
     User -> System: Choose an FieldofText
 activate System
     User -> System: Click on " Delete FieldofText" Button
-    System -> User: Show Confirmation Form
+    System --> User: Show Confirmation Form
     User -> System: Give decision
     alt No
         System--> User: Move User to "FieldofText Management" Screen

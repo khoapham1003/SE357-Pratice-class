@@ -7,7 +7,7 @@ activate User
 User -> System: Access "Folder Management" Screen
 activate System
 User -> System: Click on "Create Folder" Button 
-System -> User: Show "Create Folder" Form
+System --> User: Show "Create Folder" Form
 User -> System: Enter all required information for Folder
 User -> System: Click "Save" button
 System -> System: Check input 

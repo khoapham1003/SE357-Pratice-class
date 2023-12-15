@@ -9,7 +9,7 @@ User -> System: Access "Outcoming Document Management" Screen
 activate System
 User -> System: Click on "Delete Outcoming Document" Button 
 deactivate User
-System -> Issuing: Send request to delete Document
+System --> Issuing: Send request to delete Document
 activate Issuing
 Issuing -> Issuing: Decision to delete
 alt No

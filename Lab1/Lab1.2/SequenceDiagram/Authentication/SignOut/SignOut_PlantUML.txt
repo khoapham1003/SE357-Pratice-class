@@ -5,7 +5,7 @@ participant System
 activate User
 activate System
 User -> System: Click on "Sign Out" button
-System -> User: Show Confirmation Form
+System --> User: Show Confirmation Form
 User -> System: Give decision
 alt No
     System--> User: Move User to Home Screen

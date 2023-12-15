@@ -6,7 +6,7 @@ activate User
 User -> System: Access "FolderCategory Management" Screen
 activate System
 User -> System: Choose FolderCategory 
-System -> User : Show Folder List of that FolderCategory
+System --> User : Show Folder List of that FolderCategory
 
 deactivate System
 deactivate User

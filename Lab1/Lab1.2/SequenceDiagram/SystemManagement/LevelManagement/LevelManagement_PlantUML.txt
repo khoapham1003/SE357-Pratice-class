@@ -11,7 +11,7 @@ group CURD Level(Urgency,Security)
 
 opt Add new Urgency/Security Level
     User -> System: Click on "Add new Urgency/Security Level"  Button
-    System -> User: Show "Add new Urgency/Security Level" Form
+    System --> User: Show "Add new Urgency/Security Level" Form
     User -> System: Enter all required information for New Urgency/Security Level
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -31,7 +31,7 @@ opt Edit Level information
     User -> System: Choose an Level
 activate System
     User -> System: Click on " Edit Urgency/Security Level" Button
-    System -> User: Show "Edit Urgency/Security Level" Form
+    System --> User: Show "Edit Urgency/Security Level" Form
     User -> System: Update information for Level
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -50,7 +50,7 @@ opt Delete Urgency/Security Level
     User -> System: Choose an Level
 activate System
     User -> System: Click on " Delete Level" Button
-    System -> User: Show Confirmation Form
+    System --> User: Show Confirmation Form
     User -> System: Give decision
     alt No
         System--> User: Move User to "Level Management" Screen

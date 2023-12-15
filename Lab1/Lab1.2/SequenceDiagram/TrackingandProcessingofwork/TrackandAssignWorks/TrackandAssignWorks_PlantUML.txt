@@ -7,13 +7,13 @@ participant Server
 activate User
 User -> System: Access "Tracking and Processing of Work" Screen
 activate System
-System -> User: Show Work List to track
+System --> User: Show Work List to track
 
 group CURD Work
 
 opt Create new Work/Assign Work
     User -> System: Click on "Create new Work" Button
-    System -> User: Show "Create new Work" Form
+    System --> User: Show "Create new Work" Form
     User -> System: Enter all required information(including Assignee List) for New Work
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -32,7 +32,7 @@ opt Edit Work information
     User -> System: Choose an Work
 activate System
     User -> System: Click on " Edit Work" Button
-    System -> User: Show "Edit Work" Form
+    System --> User: Show "Edit Work" Form
     User -> System: Update information for Work
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -51,7 +51,7 @@ opt Delete Work
     User -> System: Choose an Work
 activate System
     User -> System: Click on " Delete Work" Button
-    System -> User: Show Confirmation Form
+    System --> User: Show Confirmation Form
     User -> System: Give decision
     alt No
         System--> User: Move User to "Work Management" Screen
@@ -82,16 +82,16 @@ end
 opt View status
     User -> System: Click on "View Status" Button
 activate System
-    System -> User: Show detail information about the Work 
+    System --> User: Show detail information about the Work 
     opt Feedback
         User -> System: Enter feedback
         User -> System: Click on "Submit" Button
         System -> Server: Send request
 activate Server
         Server -> Server: Save changes
-        Server -> System: Save Successfully
+        Server --> System: Save Successfully
 deactivate Server
-        System -> User: Send successful notification
+        System --> User: Send successful notification
 deactivate System
     end
 end
@@ -107,9 +107,9 @@ activate System
     System -> Server: Send request
 activate Server
     Server -> Server: Save changes
-    Server -> System: Save Successfully
+    Server --> System: Save Successfully
 deactivate Server
-    System -> User: Send successful notification
+    System --> User: Send successful notification
 deactivate System
 end
 

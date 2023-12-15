@@ -1,4 +1,4 @@
-@startuml UserManagement
+@startuml
 actor Admin_Leader as User
 participant System
 participant Server
@@ -11,7 +11,7 @@ group CURD User
 
 opt Add new User
     User -> System: Click on "Add new User" Button
-    System -> User: Show "Add new User" Form
+    System --> User: Show "Add new User" Form
     User -> System: Enter all required information(including Username and Password) for New User
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -34,7 +34,7 @@ opt Edit User information
     User -> System: Choose an User
 activate System
     User -> System: Click on " Edit User" Button
-    System -> User: Show "Edit User" Form
+    System --> User: Show "Edit User" Form
     User -> System: Update information for User
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -53,7 +53,7 @@ opt Delete User
     User -> System: Choose an User
 activate System
     User -> System: Click on " Delete User" Button
-    System -> User: Show Confirmation Form
+    System --> User: Show Confirmation Form
     User -> System: Give decision
     alt No
         System--> User: Move User to "User Management" Screen

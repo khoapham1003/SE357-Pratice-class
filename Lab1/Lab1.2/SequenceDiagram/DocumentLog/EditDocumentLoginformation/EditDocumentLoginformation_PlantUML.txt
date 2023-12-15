@@ -8,7 +8,7 @@ User -> System: Access "Document Log Management" Screen
 activate System
 User -> System: Choose a Document Log
 User -> System: Click on "Edit Document Log" Button 
-System -> User: Show "Edit Document Log" Form
+System --> User: Show "Edit Document Log" Form
 User -> System: Edit information for Document Log
 User -> System: Click "Save" button
 System -> System: Check input 

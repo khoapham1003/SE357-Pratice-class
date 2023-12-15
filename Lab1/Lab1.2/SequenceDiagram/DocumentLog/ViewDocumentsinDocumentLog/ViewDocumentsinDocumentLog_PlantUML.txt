@@ -6,7 +6,7 @@ activate User
 User -> System: Access "Document Log Management" Screen
 activate System
 User -> System: Choose Document Log 
-System -> User : Show Document List of that Document Log
+System --> User : Show Document List of that Document Log
 
 deactivate System
 deactivate User

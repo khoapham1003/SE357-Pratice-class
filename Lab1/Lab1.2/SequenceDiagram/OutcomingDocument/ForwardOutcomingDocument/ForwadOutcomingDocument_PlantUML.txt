@@ -8,7 +8,7 @@ activate Leader
 Leader -> System: Access "Outcoming Document Management" Screen
 activate System
 Leader -> System: Click on "Forwarđ Outcoming Document" Button 
-System -> Leader: Show "Forward Outcoming Document" Form
+System --> Leader: Show "Forward Outcoming Document" Form
 Leader -> System: Choose Unit or Officer to Forward Document to
 Leader -> System: Click on "Forward" Button
 System-> Server : Send requests

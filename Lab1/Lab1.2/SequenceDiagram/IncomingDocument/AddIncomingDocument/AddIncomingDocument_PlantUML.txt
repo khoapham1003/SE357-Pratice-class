@@ -7,7 +7,7 @@ activate User
 User -> System: Access "Incoming Document Management" Screen
 activate System
 User -> System: Click on "Add Incoming Document" Button 
-System -> User: Show "Add Incoming Document" Form
+System --> User: Show "Add Incoming Document" Form
 User -> System: Enter all required information for Incoming Document
 User -> System: Click "Save" button
 System -> System: Check input 

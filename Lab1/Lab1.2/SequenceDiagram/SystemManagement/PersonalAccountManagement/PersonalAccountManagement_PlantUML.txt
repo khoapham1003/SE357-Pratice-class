@@ -8,7 +8,7 @@ User -> System: Access "Personal Account Management" Screen
 activate System
 group Edit Personal information
     User -> System: Click on "Edit Personal information" Button
-    System -> User: Show "Edit Personal information" Form
+    System --> User: Show "Edit Personal information" Form
     User -> System: Update information for User
     User -> System: Click "Save" button
     System -> System: Check input 

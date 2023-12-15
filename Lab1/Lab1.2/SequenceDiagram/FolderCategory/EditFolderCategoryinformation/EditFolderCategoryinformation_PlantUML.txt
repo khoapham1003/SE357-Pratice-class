@@ -8,7 +8,7 @@ User -> System: Access "FolderCategory Management" Screen
 activate System
 User -> System: Choose a FolderCategory
 User -> System: Click on "Edit FolderCategory" Button 
-System -> User: Show "Edit FolderCategory" Form
+System --> User: Show "Edit FolderCategory" Form
 User -> System: Edit information for FolderCategory
 User -> System: Click "Save" button
 System -> System: Check input 

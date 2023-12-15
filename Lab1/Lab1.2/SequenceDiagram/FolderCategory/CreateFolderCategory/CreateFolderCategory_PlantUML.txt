@@ -7,7 +7,7 @@ activate User
 User -> System: Access "FolderCategory Management" Screen
 activate System
 User -> System: Click on "Create FolderCategory" Button 
-System -> User: Show "Create FolderCategory" Form
+System --> User: Show "Create FolderCategory" Form
 User -> System: Enter all required information for FolderCategory
 User -> System: Click "Save" button
 System -> System: Check input 

@@ -9,7 +9,7 @@ activate User
 activate System
     User -> System: Choose Folder to add into FolderCategory
     User -> System: Click on "Add Folder into FolderCategory" Button
-    System -> User: Show "Add Folder into FolderCategory" Form
+    System --> User: Show "Add Folder into FolderCategory" Form
     User -> System: Choose FolderCategory
     User -> System: Click "Save" button
 deactivate System
@@ -20,7 +20,7 @@ opt From FolderCategory Management
 activate System
     User -> System: Choose FolderCategory
     User -> System: Click on "Add Folder into FolderCategory" Button
-    System -> User: Show Folder List
+    System --> User: Show Folder List
     User -> System: Choose Folder(s) to add into FolderCategory
     User -> System: Click "Save" button
 deactivate System

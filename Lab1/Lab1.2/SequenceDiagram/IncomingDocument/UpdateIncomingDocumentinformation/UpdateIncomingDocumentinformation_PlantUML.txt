@@ -7,7 +7,7 @@ activate User
 User -> System: Access "Incoming Document Management" Screen
 activate System
 User -> System: Click on "Update Incoming Document information" Button 
-System -> User: Show "Update Incoming Document information" Form
+System --> User: Show "Update Incoming Document information" Form
 User -> System: Update information for Incoming Document
 User -> System: Click "Update" button
 System -> System: Check input 

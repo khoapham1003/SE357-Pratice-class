@@ -7,7 +7,7 @@ activate User
 User -> System: Access "Outcoming Document Management" Screen
 activate System
 User -> System: Click on "Update Outcoming Document information" Button 
-System -> User: Show "Update Outcoming Document information" Form
+System --> User: Show "Update Outcoming Document information" Form
 User -> System: Update information for Outcoming Document
 User -> System: Click "Update" button
 System -> System: Check input 

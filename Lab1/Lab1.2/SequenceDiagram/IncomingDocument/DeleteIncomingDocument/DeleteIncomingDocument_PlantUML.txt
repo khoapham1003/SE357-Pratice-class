@@ -9,7 +9,7 @@ User -> System: Access "Incoming Document Management" Screen
 activate System
 User -> System: Click on "Delete Incoming Document" Button 
 deactivate User
-System -> Authorized: Send request to delete Document
+System --> Authorized: Send request to delete Document
 activate Authorized
 Authorized -> Authorized: Decision to delete
 alt No

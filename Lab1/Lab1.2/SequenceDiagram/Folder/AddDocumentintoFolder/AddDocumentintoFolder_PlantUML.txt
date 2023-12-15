@@ -9,7 +9,7 @@ activate User
 activate System
     User -> System: Choose Document to add into Folder
     User -> System: Click on "Add into Folder" Button
-    System -> User: Show "Add Document into Folder" Form
+    System --> User: Show "Add Document into Folder" Form
     User -> System: Choose the Folder
     User -> System: Click "Save" button
 
@@ -21,7 +21,7 @@ opt From Folder Management
 activate System
     User -> System: Choose Folder
     User -> System: Click on "Add Document into Folder" Button
-    System -> User: Show Document List
+    System --> User: Show Document List
     User -> System: Choose Document(s) to add into Folder
     User -> System: Click "Save" button
 deactivate System

@@ -8,7 +8,7 @@ User -> System: Access "Incoming Document Management" Screen
 activate System
 User -> System: View Unlogged Incoming Document
 User -> System: Click on "Add to Document Log" Button 
-System -> User: Show "Add to Incomming Document Log" Form
+System --> User: Show "Add to Incomming Document Log" Form
 User -> System: Choose Log from list
 User -> System: Click "Add" button
 System -> Server: Send request      

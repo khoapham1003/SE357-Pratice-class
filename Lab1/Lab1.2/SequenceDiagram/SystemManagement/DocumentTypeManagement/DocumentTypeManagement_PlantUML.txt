@@ -11,7 +11,7 @@ group CURD DocumentType
 
 opt Add new DocumentType
     User -> System: Click on "Add new DocumentType" Button
-    System -> User: Show "Add new DocumentType" Form
+    System --> User: Show "Add new DocumentType" Form
     User -> System: Enter all required information for New DocumentType
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -31,7 +31,7 @@ opt Edit DocumentType information
     User -> System: Choose an DocumentType
 activate System
     User -> System: Click on " Edit DocumentType" Button
-    System -> User: Show "Edit DocumentType" Form
+    System --> User: Show "Edit DocumentType" Form
     User -> System: Update information for DocumentType
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -50,7 +50,7 @@ opt Delete DocumentType
     User -> System: Choose an DocumentType
 activate System
     User -> System: Click on " Delete DocumentType" Button
-    System -> User: Show Confirmation Form
+    System --> User: Show Confirmation Form
     User -> System: Give decision
     alt No
         System--> User: Move User to "DocumentType Management" Screen

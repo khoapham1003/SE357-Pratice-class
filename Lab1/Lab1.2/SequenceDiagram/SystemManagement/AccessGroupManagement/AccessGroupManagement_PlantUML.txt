@@ -11,7 +11,7 @@ group CURD AccessGroup
 
 opt Add new AccessGroup
     User -> System: Click on "Add new AccessGroup" Button
-    System -> User: Show "Add new AccessGroup" Form
+    System --> User: Show "Add new AccessGroup" Form
     User -> System: Enter all required information for New AccessGroup
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -31,7 +31,7 @@ opt Edit AccessGroup information
     User -> System: Choose an AccessGroup
 activate System
     User -> System: Click on " Edit AccessGroup" Button
-    System -> User: Show "Edit AccessGroup" Form
+    System --> User: Show "Edit AccessGroup" Form
     User -> System: Update information for AccessGroup
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -50,7 +50,7 @@ opt Delete AccessGroup
     User -> System: Choose an AccessGroup
 activate System
     User -> System: Click on " Delete AccessGroup" Button
-    System -> User: Show Confirmation Form
+    System --> User: Show Confirmation Form
     User -> System: Give decision
     alt No
         System--> User: Move User to "AccessGroup Management" Screen
@@ -78,7 +78,7 @@ end
 group Assign Permission
     User -> System: Choose an AccessGroup
 activate System
-    System -> User: Show Permission List
+    System --> User: Show Permission List
     User -> System: Choose Permissions for the chosen AccessGroup
     User -> System: Click on "Save" Button
     System -> Server: Send request

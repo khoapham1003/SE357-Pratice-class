@@ -8,7 +8,7 @@ User -> System: Access "Folder Management" Screen
 activate System
 User -> System: Choose a Folder
 User -> System: Click on "Delete Folder" Button 
-System -> User: Show Confirmation Form
+System --> User: Show Confirmation Form
 User -> System: Give decision
 alt No
     System--> User: Move User to "Folder Management" Screen

@@ -11,7 +11,7 @@ group CURD IssuingAgency
 
 opt Add new IssuingAgency
     User -> System: Click on "Add new IssuingAgencyt" Button
-    System -> User: Show "Add new IssuingAgency" Form
+    System --> User: Show "Add new IssuingAgency" Form
     User -> System: Enter all required information for New IssuingAgency
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -31,7 +31,7 @@ opt Edit IssuingAgency information
     User -> System: Choose an IssuingAgency
 activate System
     User -> System: Click on " Edit IssuingAgency" Button
-    System -> User: Show "Edit IssuingAgency" Form
+    System --> User: Show "Edit IssuingAgency" Form
     User -> System: Update information for IssuingAgency
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -50,7 +50,7 @@ opt DeleteIssuingAgency
     User -> System: Choose an IssuingAgency
 activate System
     User -> System: Click on " Delete IssuingAgency" Button
-    System -> User: Show Confirmation Form
+    System --> User: Show Confirmation Form
     User -> System: Give decision
     alt No
         System--> User: Move User to "IssuingAgency Management" Screen

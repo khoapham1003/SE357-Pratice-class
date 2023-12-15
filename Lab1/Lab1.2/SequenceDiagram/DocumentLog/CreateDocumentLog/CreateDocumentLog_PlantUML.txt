@@ -7,7 +7,7 @@ activate User
 User -> System: Access "Document Log Management" Screen
 activate System
 User -> System: Click on "Create Document Log" Button 
-System -> User: Show "Create Document Log" Form
+System --> User: Show "Create Document Log" Form
 User -> System: Enter all required information for Document Log
 User -> System: Click "Save" button
 System -> System: Check input 

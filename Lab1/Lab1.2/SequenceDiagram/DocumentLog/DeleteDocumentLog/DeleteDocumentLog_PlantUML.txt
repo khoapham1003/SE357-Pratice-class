@@ -8,7 +8,7 @@ User -> System: Access "Document Log Management" Screen
 activate System
 User -> System: Choose a Document Log
 User -> System: Click on "Delete Document Log" Button 
-System -> User: Show Confirmation Form
+System --> User: Show Confirmation Form
 User -> System: Give decision
 alt No
     System--> User: Move User to "Document Log Management" Screen

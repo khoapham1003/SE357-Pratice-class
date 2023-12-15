@@ -9,7 +9,7 @@ User -> System: Access "Outcoming Document Management" Screen
 activate System
 User -> System: Click on "Retract Outcoming Document" Button 
 deactivate User
-System -> Recipient: Send request to retract Document
+System --> Recipient: Send request to retract Document
 activate Recipient
 Recipient -> Recipient: Decision to retract
 alt No

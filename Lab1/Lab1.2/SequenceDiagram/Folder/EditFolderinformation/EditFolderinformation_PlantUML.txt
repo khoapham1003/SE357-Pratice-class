@@ -8,7 +8,7 @@ User -> System: Access "Folder Management" Screen
 activate System
 User -> System: Choose a Folder
 User -> System: Click on "Edit Folder" Button 
-System -> User: Show "Edit Folder" Form
+System --> User: Show "Edit Folder" Form
 User -> System: Edit information for Folder
 User -> System: Click "Save" button
 System -> System: Check input 

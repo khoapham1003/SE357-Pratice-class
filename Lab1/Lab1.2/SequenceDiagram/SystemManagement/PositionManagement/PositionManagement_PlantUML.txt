@@ -11,7 +11,7 @@ group CURD Position
 
 opt Add new Position
     User -> System: Click on "Add new Position" Button
-    System -> User: Show "Add new Position" Form
+    System --> User: Show "Add new Position" Form
     User -> System: Enter all required information for New Position
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -31,7 +31,7 @@ opt Edit Position information
     User -> System: Choose an Position
 activate System
     User -> System: Click on " Edit Position" Button
-    System -> User: Show "Edit Position" Form
+    System --> User: Show "Edit Position" Form
     User -> System: Update information for Position
     User -> System: Click "Save" button
     System -> System: Check input 
@@ -50,7 +50,7 @@ opt Delete Position
     User -> System: Choose an Position
 activate System
     User -> System: Click on " Delete Position" Button
-    System -> User: Show Confirmation Form
+    System --> User: Show Confirmation Form
     User -> System: Give decision
     alt No
         System--> User: Move User to "Position Management" Screen
@@ -76,4 +76,5 @@ deactivate System
 end
 deactivate Server
 deactivate User
+
 @enduml

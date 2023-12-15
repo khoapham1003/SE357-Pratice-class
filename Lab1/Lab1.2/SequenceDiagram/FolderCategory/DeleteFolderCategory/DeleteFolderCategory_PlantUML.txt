@@ -8,7 +8,7 @@ User -> System: Access "FolderCategory Management" Screen
 activate System
 User -> System: Choose a FolderCategory
 User -> System: Click on "Delete FolderCategory" Button 
-System -> User: Show Confirmation Form
+System --> User: Show Confirmation Form
 User -> System: Give decision
 alt No
     System--> User: Move User to "FolderCategory Management" Screen

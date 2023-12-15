@@ -8,7 +8,7 @@ User -> System: Access "Outcoming Document Management" Screen
 activate System
 User -> System: View Unlogged Outcoming Document
 User -> System: Click on "Add to Document Log" Button 
-System -> User: Show "Add to Outcomming Document Log" Form
+System --> User: Show "Add to Outcomming Document Log" Form
 User -> System: Choose Log from list
 User -> System: Click "Add" button
 System -> Server: Send request      
