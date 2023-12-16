@@ -40,7 +40,6 @@ attached_file_list
 notes
 }
 class IncomingDocument {
-id
 reference_number
 receipt_date
 recipient
@@ -51,7 +50,6 @@ processing_deadline
 processing_results
 }
 class OutcomingDocument {
-id
 dispatch_number
 dispatch_date
 destination
@@ -114,9 +112,9 @@ Document <|-- OutcomingDocument
 Document <|-- IncomingDocument
 Document "0..*" -- "0..*" Document: related to
 
-Document "0..*" o-- "1" DocumentLog: has
-Document "0..*" o-- "0..*" Folder: has
-Folder "0..*" o-- "0..*" FolderCategory: has 
+DocumentLog "1" o-- "0..*" Document: has
+Folder "0..*" o-- "0..*" Document: has
+FolderCategory "0..*" o-- "0..*" Folder: has 
 FieldOfText "1" -- "0..*" Document::field_of_text
 DocumentType "1" -- "0..*" Document::document_type 
 IssuingAgency "1" -- "0..*" Document::issuing_agency 
