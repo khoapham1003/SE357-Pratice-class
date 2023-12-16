@@ -4,17 +4,17 @@
 |ser| server
 |a|
 start
-:Access "Folder Category" screen;
-:Click on "Open Folder Category" button ;
+:(1) Access "Folder Category" screen;
+:(2) Click on "Open Folder Category" button ;
 |sys|
-:Send "Open" request;
+:(3) Send "Open" request;
 |ser|
-:Prepare Folder Category;
-:Allow add folder;
+:(4) Prepare Folder Category;
+:(5) Allow add folder;
 |sys|
-:Show folder list;
+:(6) Show folder list;
 |a|
-:Add Folder";
+:(7) Add Folder";
 
 
 stop

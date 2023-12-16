@@ -4,30 +4,30 @@
 |ser| server
 |a|
 start
-:Access "FieldofText Management" Screen;
-:Choose an FieldofText;
-:Click on "Edit FieldofText" Button;
+:(1) Access "FieldofText Management" Screen;
+:(2) Choose an FieldofText;
+:(3) Click on "Edit FieldofText" Button;
 |sys|
-:Show "Edit FieldofText" Form;
+:(4) Show "Edit FieldofText" Form;
 |a|
-:Update information for FieldofText;
-:Click on "Save" Button;
+:(5) Update information for FieldofText;
+:(6) Click on "Save" Button;
 |sys|
-if (Check input) then (Incorrect format or Missing Input)
-:Show notification about wrong input format or missing input;
-:Ask User to re-enter information;
+if ((7) Check input) then (Incorrect format or Missing Input)
+:(8) Show notification about wrong input format or missing input;
+:(9) Ask User to re-enter information;
 else (Correct format and all input filled)
 |sys|
-:Send request;
+:(10) Send request;
 |ser|
-:Save Changes;
+:(11) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Changes Saved;
-:Show success notification;
+if((12) Check) then (Successfully)
+:(13) Changes Saved;
+:(14) Show success notification;
 else (Failed)
-:Fail to Save Changes;
-:Show error notification;
+:(15) Fail to Save Changes;
+:(16)Show error notification;
 endif
 
 stop

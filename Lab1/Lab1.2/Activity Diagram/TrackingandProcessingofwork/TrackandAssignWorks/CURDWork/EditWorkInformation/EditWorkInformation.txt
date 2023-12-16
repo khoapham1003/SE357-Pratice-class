@@ -5,34 +5,34 @@
 |ser| server
 |a|
 start
-:Access "Track and Assign Works" Screen;
+:(1) Access "Track and Assign Works" Screen;
 |sys|
-:Show Work List to track Form;
+:(2) Show Work List to track Form;
 |a|
-:Choose a Work;
-:Click on "Edit Work" Button;
+:(3) Choose a Work;
+:(4) Click on "Edit Work" Button;
 |sys|
-:Show "Edit Work" Form;
+:(5) Show "Edit Work" Form;
 |a|
-:Enter all required information for Edit Work;
-:Click on "Save" Button;
+:(6) Enter all required information for Edit Work;
+:(7) Click on "Save" Button;
 |sys|
-if (Check input) then (Incorrect format or Missing Input)
-:Show notification about wrong input format or missing input;
-:Ask User to re-enter information;
+if ((8) Check input) then (Incorrect format or Missing Input)
+:(9) Show notification about wrong input format or missing input;
+:(10) Ask User to re-enter information;
 else (Correct format and all input filled)
 |sys|
-:Send request;
+:(11) Send request;
 |ser|
-:Save Changes;
+:(12) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Changes Saved;
-:Show success notification to Leader_Admin;
-:Show notification about Assigned Works to Assignee;
+if((13) Check) then (Successfully)
+:(14) Changes Saved;
+:(15) Show success notification to Leader_Admin;
+:(16) Show notification about Assigned Works to Assignee;
 else (Failed)
-:Fail to Save Changes;
-:Show error notification;
+:(17) Fail to Save Changes;
+:(18) Show error notification;
 endif
 endif
 stop

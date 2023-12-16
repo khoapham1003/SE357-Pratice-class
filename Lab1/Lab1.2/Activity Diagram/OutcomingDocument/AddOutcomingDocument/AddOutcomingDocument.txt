@@ -4,23 +4,23 @@
 |ser| server
 |a|
 start
-:Access "Outcoming Document" screen;
-:Click on "Add Outcoming Document";
+:(1) Access "Outcoming Document" screen;
+:(2) Click on "Add Outcoming Document";
 |sys|
-:Send "Add Outcoming Document" request;
+:(3) Send "Add Outcoming Document" request;
 |ser|
-:Prepare add Outcoming Document form;
+:(4) Prepare add Outcoming Document form;
 |sys|
-:Show add Outcoming Document form;
+:(5) Show add Outcoming Document form;
 |a|
-:Enter full information for document;
+:(6) nter full information for document;
 |sys|
-if(Check) then (Added)
-:New Outcoming Document Added(message);
-:Move to "Outcoming Document" screen;
+if((7) Check) then (Added)
+:(8) New Outcoming Document Added(message);
+:(9) Move to "Outcoming Document" screen;
 else (Cannot add new Outcoming Document)
-:Ask Add again;
+:(10) Ask Add again;
 endif
 
 stop
-@enduml -
+@enduml

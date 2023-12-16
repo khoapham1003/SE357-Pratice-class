@@ -4,20 +4,20 @@
 |ser| server
 |a|
 start
-:Access "Outcoming Document" screen;
-:Choose any document in "Outcoming Document" screen;
+:(1) Access "Outcoming Document" screen;
+:(2) Choose any document in "Outcoming Document" screen;
 |sys|
-:Send "View detail document" request;
+:(3) Send "View detail document" request;
 |ser|
-:Prepare detail Outcoming document;
+:(4) Prepare detail Outcoming document;
 |sys|
-if(Check) then (Valid )
-:Request Successful;
-:Show detail outcoming document on screen;
+if((5) Check) then (Valid )
+:(6) Request Successful;
+:(7) Show detail outcoming document on screen;
 else (Invalid)
 |sys|
-:Request failed;
-:Show error notification;
+:(8) Request failed;
+:(9) Show error notification;
 
 
 endif

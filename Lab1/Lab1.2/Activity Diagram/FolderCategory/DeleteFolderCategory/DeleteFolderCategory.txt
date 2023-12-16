@@ -4,21 +4,21 @@
 |ser| server
 |a|
 start
-:Access "Folder Category" screen;
-:Click on "Delete Folder Category" button ;
+:(1) Access "Folder Category" screen;
+:(2) Click on "Delete Folder Category" button ;
 |sys|
-:Ask again(message);
+:(3) Ask again(message);
 |sys| 
-if (Status) then (Deny)
+if ((4) Status) then (Deny)
 |sys|
-:Move "Folder Category" screen;
+:(5) Move "Folder Category" screen;
 else (Agree)
-:Send "Delete" request;
+:(6) Send "Delete" request;
 |ser|
-:Delete Folder Category and Save changes;
+:(7) Delete Folder Category and Save changes;
 |sys|
-:Delete Successfully;
-:Move to "Folder Category" Screen;
+:(8) Delete Successfully;
+:(9) Move to "Folder Category" Screen;
 endif
 
 

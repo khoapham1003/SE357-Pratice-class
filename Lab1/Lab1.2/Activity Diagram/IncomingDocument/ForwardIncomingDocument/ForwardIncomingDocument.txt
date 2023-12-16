@@ -5,6 +5,10 @@
 |ser| server
 |a|
 start
+<<<<<<< HEAD
+:(1) Access "Incoming Document Management" screen;
+:(2) Click on "Forward Incoming Document" Button;
+=======
 :Access "Incoming Document Management" screen;
 :Click on "Forward Incoming Document" Button;
 |sys|
@@ -12,9 +16,30 @@ start
 |a|
 :Choose Unit or Officer to Forward Document to;
 :Click "Forward" button;
+>>>>>>> 70669f84da807f36467ba80b7e7b0b563192dfe2
 |sys|
-:Send request;
+:(3) Show "Forward Incoming Document" form;
+|a|
+:(4) Choose Unit or Officer to Forward Document to;
+:(5) Click "Forward" button;
+|sys|
+:(6) Send request;
 |ser|
+<<<<<<< HEAD
+:(7) Prepare for Forwarding;
+|sys|
+if((8) Check) then (Successful)
+:(9) Incoming Document Forwarded;
+:(10) Show success notification;
+:(11) Send notification about Forwarding to Recipient;
+|a1|
+:(12) Send Forwarding Receive Notification;
+|sys|
+:(13) Show changed Forwarding status(Done);
+else (Failed)
+:(14) Fail message;
+:(15) Show failed notification and reason;
+=======
 :Prepare for Forwarding;
 |sys|
 if(Check) then (Successful)
@@ -28,6 +53,7 @@ if(Check) then (Successful)
 else (Failed)
 :Fail message;
 :Show failed notification and reason;
+>>>>>>> 70669f84da807f36467ba80b7e7b0b563192dfe2
 endif
 
 stop

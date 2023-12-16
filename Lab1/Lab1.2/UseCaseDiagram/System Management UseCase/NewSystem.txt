@@ -1,0 +1,41 @@
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+actor Clerk as Clerk
+actor Admin as Admin
+actor Staff as Staff
+actor Leader as Leader
+
+rectangle "Document management system_System Management " {
+
+Admin -up- (Edit Access Group)
+Admin -up- (Delete Access Group)
+Admin -up- (Assign Permission)
+Admin -up- (Add New Access Group)
+Admin -up- (Edit User Information)
+Admin -up- (Delete User)
+Admin -up- (Add new User)
+Admin -up- (Edit Personal Account)
+Admin -up- (Backups)
+Admin -up- (Restorations)
+
+
+Leader -- (Edit Access Group)
+Leader -- (Delete Access Group)
+Leader -- (Assign Permission)
+Leader -- (Add New Access Group)
+Leader -- (Edit User Information)
+Leader -- (Delete User)
+Leader -- (Add new User)
+Leader -- (Edit Personal Account)
+Leader -- (Backups)
+Leader -- (Restorations)
+
+
+Clerk -up- (Edit Personal Account)
+
+
+Staff -- (Edit Personal Account)
+
+}

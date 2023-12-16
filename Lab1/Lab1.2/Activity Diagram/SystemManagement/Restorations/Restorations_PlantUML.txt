@@ -4,20 +4,20 @@
 |ser| server
 |a|
 start
-:Access "Restorations" Screen;
-:Choose file to apply Restoration;
-:Click on "Restore" Button;
+:(1) Access "Restorations" Screen;
+:(2) Choose file to apply Restoration;
+:(3) Click on "Restore" Button;
 |sys|
-:Send request;
+:(4) Send request;
 |ser|
-:Restoration;
+:(5) Restoration;
 |sys|
-if(Check) then (Successfully)
-:Restorations Done;
-:Show success notification;
+if((6) Check) then (Successfully)
+:(7) Restorations Done;
+:(8) Show success notification;
 else (Failed)
-:Fail to Restore;
-:Show error notification;
+:(9) Fail to Restore;
+:(10) Show error notification;
 endif
 
 stop

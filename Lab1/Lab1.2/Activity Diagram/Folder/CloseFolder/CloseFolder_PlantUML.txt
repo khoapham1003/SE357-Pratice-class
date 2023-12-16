@@ -4,20 +4,20 @@
 |ser| server
 |a|
 start
-:Access "Folder Management" Screen;
-:Choose a currently Opened Folder;
-:Click on "Close" Button;
+:(1) Access "Folder Management" Screen;
+:(2) Choose a currently Opened Folder;
+:(3) Click on "Close" Button;
 |sys|
-:Send request;
+:(4) Send request;
 |ser|
-:Save Changes;
+:(5) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Folder Closed;
-:Show success notification;
+if((6) Check) then (Successfully)
+:(7) Folder Closed;
+:(8) Show success notification;
 else (Failed)
-:Fail to Folder Closed;
-:Show error notification;
+:(9) Fail to Folder Closed;
+:(10) Show error notification;
 endif
 
 stop

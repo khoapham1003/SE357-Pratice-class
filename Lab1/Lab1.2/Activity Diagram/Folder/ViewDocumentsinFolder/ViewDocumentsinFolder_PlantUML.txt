@@ -4,10 +4,10 @@
 |ser| server
 |a|
 start
-:Access "Folder Management" Screen;
-:Choose Folder;
+:(1) Access "Folder Management" Screen;
+:(2) Choose Folder;
 |sys|
-:Show Document List of that Folder;
+:(3) Show Document List of that Folder;
 
 
 stop

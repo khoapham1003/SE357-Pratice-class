@@ -4,24 +4,24 @@
 |ser| server
 |a|
 start
-:Access "Folder Management" Screen;
-:Choose Folder;
+:(1) Access "Folder Management" Screen;
+:(2) Choose Folder;
 |sys|
-:Show Document List of that Folder;
+:(3) Show Document List of that Folder;
 |a|
-:Choose Document(s);
-:Click on "Remove" Button;
+:(4) Choose Document(s);
+:(5) Click on "Remove" Button;
 |sys|
-:Send request;
+:(6) Send request;
 |ser|
-:Save Changes;
+:(7) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Document Removed;
-:Show success notification;
+if((8) Check) then (Successfully)
+:(9) Document Removed;
+:(10) Show success notification;
 else (Failed)
-:Fail to Remove Document(s) from Folder;
-:Show error notification;
+:(11) Fail to Remove Document(s) from Folder;
+:(12) Show error notification;
 endif
 
 stop

@@ -4,20 +4,20 @@
 |ser| server
 |a|
 start
-:Access "Backups" Screen;
-:Choose file to backups;
-:Click on "Backup" Button;
+:(1) Access "Backups" Screen;
+:(2) Choose file to backups;
+:(3) Click on "Backup" Button;
 |sys|
-:Send request;
+:(4) Send request;
 |ser|
-:Backup to destination file;
+:(5) Backup to destination file;
 |sys|
-if(Check) then (Successfully)
-:Backup Done;
-:Show success notification;
+if((6) Check) then (Successfully)
+:(7) Backup Done;
+:(8) Show success notification;
 else (Failed)
-:Fail to Backup;
-:Show error notification;
+:(9) Fail to Backup;
+:(10) Show error notification;
 endif
 
 

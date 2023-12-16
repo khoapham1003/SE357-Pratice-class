@@ -4,22 +4,22 @@
 |ser| server
 |a|
 start
-:Access "Incoming Document" screen; 
-:Click on any document which was forwarded;
-: Click on "Retract Document" button ;
+:(1) Access "Incoming Document" screen; 
+:(2) Click on any document which was forwarded;
+:(3) Click on "Retract Document" button ;
 |sys|
-:Send request;
+:(4) Send request;
 |ser|
-:Retract document;
+:(5) Retract document;
 |sys|
-if (Check document) then (Valid document)
-:Request Successful;
-:Retract successfully(message) ;
-:Move user to "Incoming Document" screen;
+if ((6) Check document) then (Valid document)
+:(7) Request Successful;
+:(8) Retract successfully(message) ;
+:(9) Move user to "Incoming Document" screen;
 else (Invalid document)
-:Request failed;
-:Show error notification;
-:Move user to "Incoming Document" screen;
+:(10) Request failed;
+:(11) Show error notification;
+:(12) Move user to "Incoming Document" screen;
 endif
 
 

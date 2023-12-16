@@ -4,20 +4,20 @@
 |ser| server
 |a|
 start
-:Access "Folder Management" Screen;
-:Choose a current Closed Folder;
-:Click on "Open" Button;
+:(1) Access "Folder Management" Screen;
+:(2) Choose a current Closed Folder;
+:(3) Click on "Open" Button;
 |sys|
-:Send request;
+:(4) Send request;
 |ser|
-:Save Changes;
+:(5) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Folder Opened;
-:Show success notification;
+if((6) Check) then (Successfully)
+:(7) Folder Opened;
+:(8) Show success notification;
 else (Failed)
-:Fail to Open Folder;
-:Show error notification;
+:(9) Fail to Open Folder;
+:(10) Show error notification;
 endif
 
 stop

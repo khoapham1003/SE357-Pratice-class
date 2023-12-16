@@ -4,28 +4,28 @@
 |ser| server
 |a|
 start
-:Access "Folder Category" screen;
-:Click on "Create Folder Category";
+:(1) Access "Folder Category" screen;
+:(2) Click on "Create Folder Category";
 |sys|
-:Send "Create folder category" request;
+:(3) Send "Create folder category" request;
 |ser|
-:Prepare create folder category form;
+:(4) Prepare create folder category form;
 |sys|
-:Show folder category form;
+:(5) Show folder category form;
 |a|
-:Enter information for folder category;
-:Click on "Save";
+:(6) Enter information for folder category;
+:(7) Click on "Save";
 |sys|
-:Send "Create new folder category" request;
+:(8) Send "Create new folder category" request;
 |ser|
-:Save Changes;
+:(9) Save Changes;
 |sys|
-if(Check) then (Folder Category Added)
-:New Folder Category Added(message);
-:Move to "Folder Category List" screen;
+if((10) Check) then (Folder Category Added)
+:(11) New Folder Category Added(message);
+:(12) Move to "Folder Category List" screen;
 else (Cannot create new folder Category)
-:Show error notification;
-:Ask Create again;
+:(13) Show error notification;
+:(14) Ask Create again;
 endif
 
 stop

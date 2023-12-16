@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+actor User as User
+
+
+rectangle "Document management system " {
+
+
+User -- (Incoming Document Management)
+User -- (Outcoming Document Management)
+User -- (Document Log Management)
+User -- (Folder Category Management)
+User -- (Folder Management)
+User -- (Tracking and Processing of work)
+User -- (System Management)
+User -- (Authentication)
+
+=======
 @startuml
 
 left to right direction
@@ -17,4 +38,5 @@ User -- (Tracking and Processing of work)
 User -- (System Management)
 User -- (Authentication)
 
+>>>>>>> 70669f84da807f36467ba80b7e7b0b563192dfe2
 }

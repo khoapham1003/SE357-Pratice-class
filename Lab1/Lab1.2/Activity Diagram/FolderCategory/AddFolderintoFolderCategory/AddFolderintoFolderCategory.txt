@@ -4,25 +4,25 @@
 |ser| server
 |a|
 start
-:Access "Folder Management" Screen;
-:Choose Folder to add into FolderCategory;
-:Click on "Add Folder into FolderCategory" Button;
+:(1) Access "Folder Management" Screen;
+:(2) Choose Folder to add into FolderCategory;
+:(3) Click on "Add Folder into FolderCategory" Button;
 |sys|
-:Show "Add Folder into FolderCategory" Form;
+:(4) Show "Add Folder into FolderCategory" Form;
 |a|
-:Choose FolderCategory;
-:Click "Save" Button;
+:(5) Choose FolderCategory;
+:(6) Click "Save" Button;
 |sys|
-:Send add request;
+:(7) Send add request;
 |ser|
-:Save Changes;
+:(8) Save Changes;
 |sys|
-if(Check) then (Folder Added)
-:Folder(s) Added into FolderCategory;
-:Show success notification;
+if((9) Check) then (Folder Added)
+:(10) Folder(s) Added into FolderCategory;
+:(11) Show success notification;
 else (Cannot add folder )
-:Fail to add Folder(s) into FolderCategory;
-:Show error notification;
+:(12) Fail to add Folder(s) into FolderCategory;
+:(13) Show error notification;
 endif
 
 

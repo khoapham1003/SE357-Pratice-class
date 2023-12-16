@@ -4,15 +4,15 @@
 |ser| server
 |a|
 start
-:Access "Folder Category" screen;
-:Click on "Close Folder Category" button ;
+:(1) Access "Folder Category" screen;
+:(2) Click on "Close Folder Category" button ;
 |sys|
-:Send "Close" request;
+:(3) Send "Close" request;
 |ser|
-:Prepare Folder Category;
-:Don't Allow add folder;
+:(4) Prepare Folder Category;
+:(5) Don't Allow add folder;
 |sys|
-:Show folder list;
+:(6) Show folder list;
 
 stop
 @enduml

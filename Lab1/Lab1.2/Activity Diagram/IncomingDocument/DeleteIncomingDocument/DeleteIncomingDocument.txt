@@ -4,22 +4,22 @@
 |ser| server
 |a|
 start
-:Access "Incoming Document" screen;
-:Choose any document in "Incoming Document" screen;
-:Click on "Delete Document" button ;
+:(1) Access "Incoming Document" screen;
+:(2) Choose any document in "Incoming Document" screen;
+:(3) Click on "Delete Document" button ;
 |sys|
-:Ask again(message);
+:(4) Ask again(message);
 |sys| 
-if (Status) then (Deny)
+if ((5) Status) then (Deny)
 |sys|
-:Move "Incoming Document" screen;
+:(6) Move "Incoming Document" screen;
 else (Agree)
-:Send "Delete" request;
+:(7) Send "Delete" request;
 |ser|
-:Delete Document and Save changes;
+:(8) Delete Document and Save changes;
 |sys|
-:Delete Successfully;
-:Move "Incoming Document" screen;
+:(9) Delete Successfully;
+:(10) Move "Incoming Document" screen;
 endif
 
 

@@ -4,29 +4,29 @@
 |ser| server
 |a|
 start
-:Access "Personal Account Management" Screen;
-:Click on "Edit Personal Account" Button;
+:(1) Access "Personal Account Management" Screen;
+:(2) Click on "Edit Personal Account" Button;
 |sys|
-:Show "Edit Personal Account" Form;
+:(3) Show "Edit Personal Account" Form;
 |a|
-:Update information for User;
-:Click on "Save" Button;
+:(4) Update information for User;
+:(5) Click on "Save" Button;
 |sys|
-if (Check input) then (Incorrect format or Missing Input)
-:Show notification about wrong input format or missing input;
-:Ask User to re-enter information;
+if ((6) Check input) then (Incorrect format or Missing Input)
+:(7) Show notification about wrong input format or missing input;
+:(8) Ask User to re-enter information;
 else (Correct format and all input filled)
 |sys|
-:Send request;
+:(9) Send request;
 |ser|
-:Save Changes;
+:(10) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Changes Saved;
-:Show success notification;
+if((11) Check) then (Successfully)
+:(12) Changes Saved;
+:(13) Show success notification;
 else (Failed)
-:Fail to Save Changes;
-:Show error notification;
+:(14) Fail to Save Changes;
+:(15) Show error notification;
 endif
 
 stop

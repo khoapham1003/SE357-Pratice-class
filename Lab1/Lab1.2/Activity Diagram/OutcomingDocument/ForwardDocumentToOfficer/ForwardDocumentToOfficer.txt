@@ -4,22 +4,22 @@
 |ser| server
 |a|
 start
-:Access "Outcoming Document" screen; 
-: Click on "Forward Document" button ;
+:(1) Access "Outcoming Document" screen; 
+:(2) Click on "Forward Document" button ;
 |sys|
-:Send request;
+:(3) Send request;
 |ser|
-:Prepare document information;
+:(4) Prepare document information;
 |sys|
-if (Check document) then (Valid document)
-:Request Successful;
-:Forward Document information;
-:Forward successfully(message) ;
-:Move user to "Outcoming Document" screen;
+if ((5) Check document) then (Valid document)
+:(6) Request Successful;
+:(7) Forward Document information;
+:(8) Forward successfully(message) ;
+:(9) Move user to "Outcoming Document" screen;
 else (Invalid document)
-:Request failed;
-:Show error notification;
-:Move user to "Outcoming Document" screen;
+:(10) Request failed;
+:(11) Show error notification;
+:(12) Move user to "Outcoming Document" screen;
 endif
 
 

@@ -4,28 +4,28 @@
 |ser| server
 |a|
 start
-:Access "AccessGroup Management" Screen;
-:Choose an AccessGroup;
-:Click on "Delete AccessGroup" Button;
+:(1) Access "AccessGroup Management" Screen;
+:(2) Choose an AccessGroup;
+:(3) Click on "Delete AccessGroup" Button;
 |sys|
-:Show Confirmation Form;
+:(4) Show Confirmation Form;
 |a|
-:Give desion;
+:(5) Give desion;
 |sys|
-if (Check) then (No)
-:Move User to "Folder Management" Sreen;
+if ((6)Check) then (No)
+:(7) Move User to "Folder Management" Sreen;
 else (Yes)
 |sys|
-:Send request;
+:(8) Send request;
 |ser|
-:Save Changes;
+:(9) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Changes Saved;
-:Show success notification;
+if((10) Check) then (Successfully)
+:(11) Changes Saved;
+:(12) Show success notification;
 else (Failed)
-:Fail to Save Changes;
-:Show error notification;
+:(13) Fail to Save Changes;
+:(14) Show error notification;
 endif
 endif
 stop

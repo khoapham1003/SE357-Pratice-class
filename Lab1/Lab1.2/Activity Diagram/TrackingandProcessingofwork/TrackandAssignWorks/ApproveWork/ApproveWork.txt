@@ -4,26 +4,27 @@
 |ser| server
 |a|
 start
-:Access "Track and Assign Works" Screen;
+:(1) Access "Track and Assign Works" Screen;
 |sys|
-:Show Work List to track Form;
+:(2) Show Work List to track Form;
 |a|
-:Choose Work;
-if(check) then (Done Work but not approved yet)
-:Click on "Approve" Button to Approve;
+:(3) Choose Work;
+if((4) check) then (Done Work but not approved yet)
+:(5) Click on "Approve" Button to Approve;
 else (Done and Approved Work)
-:Click on "Unapprove" Button to unapprove an approved Work;
+:(6) Click on "Unapprove" Button to unapprove an approved Work;
 |sys|
-:Send request;
+:(7) Send request;
 |ser|
-:Save Changes;
+:(8) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Changes Saved;
-:Show success notification;
+if((9) Check) then (Successfully)
+:(10) Changes Saved;
+:(11) Show success notification;
 else (Failed)
-:Fail to Save Changes;
-:Show error notification;
+:(12) Fail to Save Changes;
+:(13) Show error notification;
+endif
 endif
 stop
 @enduml

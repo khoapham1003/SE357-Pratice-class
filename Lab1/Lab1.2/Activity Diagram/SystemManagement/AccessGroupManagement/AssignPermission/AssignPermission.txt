@@ -4,24 +4,24 @@
 |ser| server
 |a|
 start
-:Access "AccessGroup Management" Screen;
-:Choose an AccessGroup;
+:(1) Access "AccessGroup Management" Screen;
+:(2) Choose an AccessGroup;
 |sys|
-:Show Permission List;
+:(3) Show Permission List;
 |a|
-:Choose Permissions for the chosen AccessGroup;
-:Click on "Save" Button;
+:(4) Choose Permissions for the chosen AccessGroup;
+:(5) Click on "Save" Button;
 |sys|
-:Send request;
+:(6) Send request;
 |ser|
-:Save Changes;
+:(7) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Changes Saved;
-:Show success notification;
+if((8) Check) then (Successfully)
+:(9) Changes Saved;
+:(10) Show success notification;
 else (Failed)
-:Fail to Save Changes;
-:Show error notification;
+:(11) Fail to Save Changes;
+:(12) Show error notification;
 endif
 
 stop

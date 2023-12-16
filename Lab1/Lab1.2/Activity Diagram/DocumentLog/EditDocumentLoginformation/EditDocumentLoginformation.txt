@@ -1,22 +1,22 @@
 @startuml
-a Admin_Leader_Employee
-sys system
-ser server
-a
+|a| Admin_Leader_Clerk
+|sys| system
+|ser| server
+
+|a|
 start
-Access Document Log screen; 
-Change information that needs to be updated;
-Click on Update Document Log information button;
-sys
-Send Update Document Log information request;
-ser
-check format;
-sys
-if(Check format) then (Request Successful)
-sys
-Show updated information on Document Log Information screen;
+:(1) Access Document Log screen; 
+:(2) Change information that needs to be updated;
+:(3) Click on Update Document Log information button;
+|sys|
+:(4) Send Update Document Log information request;
+|ser|
+:(5) check format;
+|sys|
+if((6) Check format) then (Request Successful)
+:(7) Show updated information on Document Log Information screen;
 else (Format is correct)
-Show error notification;
+:(8) Show error notification;
 endif
 
 stop

@@ -4,24 +4,24 @@
 |ser| server
 |a|
 start
-:Access "Folder Management" Screen;
-:Choose FolderCategory;
+:(1) Access "Folder Management" Screen;
+:(2) Choose FolderCategory;
 |sys|
-:Show Folder List of that FolderCategory;
+:(3) Show Folder List of that FolderCategory;
 |a|
-:Choose Folder(s);
-:Click "Remove" Button;
+:(4) Choose Folder(s);
+:(5) Click "Remove" Button;
 |sys|
-:Send request;
+:(6) Send request;
 |ser|
-:Save Changes;
+:(7) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Folder Removed;
-:Show success notification;
+if((8) Check) then (Successfully)
+:(9) Folder Removed;
+:(10) Show success notification;
 else (Failed)
-:Fail to Remove Folder(s) from FolderCategory;
-:Show error notification;
+:(11) Fail to Remove Folder(s) from FolderCategory;
+:(12) Show error notification;
 endif
 
 stop

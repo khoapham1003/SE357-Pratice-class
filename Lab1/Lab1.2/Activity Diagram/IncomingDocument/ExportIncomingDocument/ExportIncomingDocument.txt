@@ -4,26 +4,26 @@
 |ser| server
 |a|
 start
-:Access "Incoming Document" screen; 
-: Click on "Export Document" button ;
+:(1) Access "Incoming Document" screen; 
+:(2) Click on "Export Document" button ;
 |sys|
-:Send request;
+:(3) Send request;
 |ser|
-:Prepare document information;
+:(4) Prepare document information;
 |sys|
-if (Check document) then (Valid document)
-:Request Successful;
-:Load Document information;
+if ((5) Check document) then (Valid document)
+:(6) Request Successful;
+:(7) Load Document information;
 |a|
-:Click "Export" button;
+:(8) Click "Export" button;
 |sys|
-:Export Processing;
-:Export successfully(message) ;
-:Move user to "Incoming Document" screen;
+:(9) Export Processing;
+:(10) Export successfully(message) ;
+:(11) Move user to "Incoming Document" screen;
 else (Invalid document)
-:Request failed;
-:Show error notification;
-:Move user to "Incoming Document" screen;
+:(12) Request failed;
+:(13) Show error notification;
+:(14) Move user to "Incoming Document" screen;
 endif
 
 

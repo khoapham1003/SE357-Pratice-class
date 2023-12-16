@@ -3,6 +3,19 @@
 |sys| system
 |a|
 start
+<<<<<<< HEAD
+:(1) Click on "Sign Out" Button;
+|sys|
+:(2) Show Confirmation form;
+|a|
+:(3) Give desion;
+|sys|
+:(4) Send request;
+if((5) Check) then (Yes)
+:(6) Move User to Home Screen;
+else (No)
+:(7) Move User to "Sign In" Screen;
+=======
 :Click on "Sign Out" Button;
 |sys|
 :Show Confirmation form;
@@ -14,6 +27,7 @@ if(Check) then (Yes)
 :Move User to Home Screen;
 else (No)
 :Move User to "Sign In" Screen;
+>>>>>>> 70669f84da807f36467ba80b7e7b0b563192dfe2
 endif
 
 stop

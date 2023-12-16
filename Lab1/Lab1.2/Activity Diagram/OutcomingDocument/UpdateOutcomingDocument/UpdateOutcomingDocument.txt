@@ -4,23 +4,23 @@
 |ser| server
 |a|
 start
-:Access "Outcoming Document" screen;
-:Click on "Update Outcoming Document";
+:(1) Access "Outcoming Document" screen;
+:(2) Click on "Update Outcoming Document";
 |sys|
-:Send "Update Outcoming Document" request;
+:(3) Send "Update Outcoming Document" request;
 |ser|
-:Prepare update Outcoming Document form;
+:(4) Prepare update Outcoming Document form;
 |sys|
-:Show update Outcoming Document form;
+:(5) Show update Outcoming Document form;
 |a|
-:Enter full information for document;
+:(6) Enter full information for document;
 |sys|
-if(Check) then (Updated)
-:Outcoming Document Updated(message);
-:Move to "Outcoming Document" screen;
+if((7) Check) then (Updated)
+:(8) Outcoming Document Updated(message);
+:(9) Move to "Outcoming Document" screen;
 else (Cannot update Outcoming Document)
-:Ask Update again;
+:(10) Ask Update again;
 endif
 
 stop
-@enduml -
+@enduml 

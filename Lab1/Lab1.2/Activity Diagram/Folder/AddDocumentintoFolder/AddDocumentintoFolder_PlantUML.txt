@@ -4,25 +4,25 @@
 |ser| server
 |a|
 start
-:Access "Folder Management" Screen;
-:Choose Folder;
-:Click "Add Document into Folder" Button;
+:(1) Access "Folder Management" Screen;
+:(2) Choose Folder;
+:(3) Click "Add Document into Folder" Button;
 |sys|
-:Show Document List;
+:(4) Show Document List;
 |a|
-:Choose Document(s) to add into folder;
-:Click "Save" Button;
+:(5) Choose Document(s) to add into folder;
+:(6) Click "Save" Button;
 |sys|
-:Send request;
+:(7) Send request;
 |ser|
-:Save Changes;
+:(8) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Document added into Folder;
-:Show success notification;
+if((9) Check) then (Successfully)
+:(10) Document added into Folder;
+:(11) Show success notification;
 else (Failed)
-:Fail to Add Document(s) into Folder;
-:Show error notification;
+:(12) Fail to Add Document(s) into Folder;
+:(13) Show error notification;
 endif
 
 stop

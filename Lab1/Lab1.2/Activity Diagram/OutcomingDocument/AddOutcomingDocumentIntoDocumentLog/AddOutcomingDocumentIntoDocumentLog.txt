@@ -4,6 +4,27 @@
 |ser| server
 |a|
 start
+<<<<<<< HEAD
+:(1) Access "Outcoming Document Management" screen;
+:(2) View Unlogged Outcoming Document;
+:(3) Click on "Add to Outcoming Log" Button;
+|sys|
+:(4) Show "Add to Outcoming Document Log" form;
+|a|
+:(5) Choose Log from list;
+:(6) Click "Add" button;
+|sys|
+:(7) Send request;
+|ser|
+:(8) Save changes;
+|sys|
+if((9) Check) then (Successful)
+:(10) Outcoming Document Added into Document Log;
+:(11) Show success notification;
+else (Failed)
+:(12) Fail to Add to Document Log;
+:(13) Show failed notification and reason;
+=======
 :Access "Outcoming Document Management" screen;
 :View Unlogged Outcoming Document;
 :Click on "Add to Outcoming Log" Button;
@@ -23,6 +44,7 @@ if(Check) then (Successful)
 else (Failed)
 :Fail to Add to Document Log;
 :Show failed notification and reason;
+>>>>>>> 70669f84da807f36467ba80b7e7b0b563192dfe2
 endif
 
 stop

@@ -4,59 +4,28 @@
 |ser| server
 |a|
 start
-:Access "Levelt Management" Screen;
-:Choose an Level;
-:Click on "Delete Level" Button;
+:(1) Access "Level Management" Screen;
+:(2) Choose an Level;
+:(3) Click on "Delete Level" Button;
 |sys|
-:Show Confirmation Form;
+:(4) Show Confirmation Form;
 |a|
-:Give desion;
+:(5) Give desion;
 |sys|
-if (Check) then (No)
-:Move User to "Level Management" Sreen;
+if ((6) Check) then (No)
+:(7) Move User to "Level Management" Sreen;
 else (Yes)
 |sys|
-:Send request;
+:(8) Send request;
 |ser|
-:Save Changes;
+:(9) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Changes Saved;
-:Show success notification;
+if((10) Check) then (Successfully)
+:(10) Changes Saved;
+:(11) Show success notification;
 else (Failed)
-:Fail to Save Changes;
-:Show error notification;
-endif
-endif
-stop
-@enduml@startuml
-|a| Admin_Leader
-|sys| system
-|ser| server
-|a|
-start
-:Access "DocumentType Management" Screen;
-:Choose anDocumentType;
-:Click on "Delete DocumentType" Button;
-|sys|
-:Show Confirmation Form;
-|a|
-:Give desion;
-|sys|
-if (Check) then (No)
-:Move User to "DocumentType Management" Sreen;
-else (Yes)
-|sys|
-:Send request;
-|ser|
-:Save Changes;
-|sys|
-if(Check) then (Successfully)
-:Changes Saved;
-:Show success notification;
-else (Failed)
-:Fail to Save Changes;
-:Show error notification;
+:(12) Fail to Save Changes;
+:(13) Show error notification;
 endif
 endif
 stop

@@ -6,36 +6,36 @@
 
 |a|
 start
-:Access "Tracking and Processing of Work" Screen;
+:(1) Access "Tracking and Processing of Work" Screen;
 |sys|
-:Show Work List to Track;
+:(2) Show Work List to Track;
 |a|
-:Assign Works for Assignees;
+:(3) Assign Works for Assignees;
 |sys|
-:Send request;
+:(4) Send request;
 |ser|
-:Save Changes;
+:(5) Save Changes;
 |sys|
-:Save Successfully;
-:Send successful notification;
-:Forward to Assignees;
-:Send notification about forwarding;
+:(6) Save Successfully;
+:(7) Send successful notification;
+:(8) Forward to Assignees;
+:(9) Send notification about forwarding;
 |a1|
-:Confirm receipt of assignment notification;
-:Process Work;
-:Submit Work;
+:(10) Confirm receipt of assignment notification;
+:(11) Process Work;
+:(12) Submit Work;
 |sys|
-:Send notification about Completed Assignment;
+:(13) Send notification about Completed Assignment;
 |a|
-:Approve Work;
+:(14) Approve Work;
 |sys|
-:Send request;
+:(15) Send request;
 |ser|
-:Save changes;
+:(16) Save changes;
 |sys|
-:Save Successfully;
-:Send sucessful notification to Admin_Leader;
-:Send notification about Approval to Assignees;
+:(17) Save Successfully;
+:(18) Send sucessful notification to Admin_Leader;
+:(19) Send notification about Approval to Assignees;
 
 stop
 @enduml

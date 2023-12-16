@@ -4,22 +4,22 @@
 |ser| server
 |a|
 start
-:Access "Incoming Document" screen;
-:Click on "Update Incoming Document";
+:(1) Access "Incoming Document" screen;
+:(2) Click on "Update Incoming Document";
 |sys|
-:Send "Update Incoming Document" request;
+:(3) Send "Update Incoming Document" request;
 |ser|
-:Prepare update Incoming Document form;
+:(4) Prepare update Incoming Document form;
 |sys|
-:Show update Incoming Document form;
+:(5) Show update Incoming Document form;
 |a|
-:Enter full information for document;
+:(6) Enter full information for document;
 |sys|
-if(Check) then (Updated)
-:Incoming Document Updated(message);
-:Move to "Incoming Document" screen;
+if((7) Check) then (Updated)
+:(8) Incoming Document Updated(message);
+:(9) Move to "Incoming Document" screen;
 else (Cannot update Incoming Document)
-:Ask Update again;
+:(10) Ask Update again;
 endif
 
 stop

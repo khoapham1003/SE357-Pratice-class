@@ -4,22 +4,22 @@
 |ser| server
 |a|
 start
-:Access "Incoming Document" screen;
-:Click on "Add Incoming Document";
+:(1) Access "Incoming Document" screen;
+:(2) Click on "Add Incoming Document";
 |sys|
-:Send "Add Incoming Document" request;
+:(3) Send "Add Incoming Document" request;
 |ser|
-:Prepare add Incoming Document form;
+:(4) Prepare add Incoming Document form;
 |sys|
-:Show add Incoming Document form;
+:(5) Show add Incoming Document form;
 |a|
-:Enter full information for document;
+:(6) Enter full information for document;
 |sys|
-if(Check) then (Added)
-:New Incoming Document Added(message);
-:Move to "Incoming Document" screen;
+if((7) Check) then (Added)
+:(8) New Incoming Document Added(message);
+:(9) Move to "Incoming Document" screen;
 else (Cannot add new incoming document)
-:Ask Add again;
+:(10) Ask Add again;
 endif
 
 stop

@@ -4,24 +4,24 @@
 |ser| server
 |a|
 start
-:Enter username and password; 
-:Click on "Sign in" button;
+:(1) Enter username and password; 
+:(2) Click on "Sign in" button;
 |sys|
-if(Check format) then (Format is incorrect)
-:Wrong format(message);
+if((3) Check format) then (Format is incorrect)
+:(4) Wrong format(message);
 else (Format is correct)
-:Send username and password;
+:(5) Send username and password;
 |ser|
-:Authenticate username and password;
+:(6) Authenticate username and password;
 |sys|
-if(Check user) then (Valid user)
-:Accept Sign in;
-:Sign in Successful(message);
-:Move user to home screen;
+if((7) Check user) then (Valid user)
+:(8) Accept Sign in;
+:(9) Sign in Successful(message);
+:(10) Move user to home screen;
 else (Invalid user)
-:Reject Sign in;
-:Sign in Failed(message) ;
-:Ask sign in again;
+:(11) Reject Sign in;
+:(12) Sign in Failed(message) ;
+:(13) Ask sign in again;
 endif
 endif
 

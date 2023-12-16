@@ -4,31 +4,31 @@
 |ser| server
 |a|
 start
-:Access "Folder Management" Screen;
-:Choose a Folder;
-:Click on "Edit Folder" Button;
+:(1) Access "Folder Management" Screen;
+:(2) Choose a Folder;
+:(3) Click on "Edit Folder" Button;
 |sys|
-:Show "Edit Folder" Form;
+:(4) Show "Edit Folder" Form;
 |a|
-:Edit information for Folder;
-:Click "Save" button;
+:(5) Edit information for Folder;
+:(6) Click "Save" button;
 |sys|
 |sys|
-if (Check input) then (Incorrect format or Missing Input)
-:Show notification about wrong input format or missing input;
-:Ask User to re-enter information;
+if ((7) Check input) then (Incorrect format or Missing Input)
+:(8) Show notification about wrong input format or missing input;
+:(9) Ask User to re-enter information;
 else (Correct format and all input filled)
 |sys|
-:Send request;
+:(10) Send request;
 |ser|
-:Save Changes;
+:(11) Save Changes;
 |sys|
-if(Check) then (Successfully)
-:Folder information Edited;
-:Show success notification;
+if((12) Check) then (Successfully)
+:(13) Folder information Edited;
+:(14) Show success notification;
 else (Failed)
-:Fail to Update Folder information;
-:Show error notification;
+:(15) Fail to Update Folder information;
+:(16) Show error notification;
 endif
 endif
 
