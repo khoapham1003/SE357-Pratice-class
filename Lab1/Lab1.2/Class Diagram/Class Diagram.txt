@@ -37,7 +37,7 @@ content
 urgency_level
 security_level
 attached_file_list
-notes
+note
 }
 class IncomingDocument {
 reference_number
@@ -103,7 +103,7 @@ retention_period
 }
 class FolderCategory{
 id
-folder_number
+foldercategory_number
 name
 status
 retention_period
