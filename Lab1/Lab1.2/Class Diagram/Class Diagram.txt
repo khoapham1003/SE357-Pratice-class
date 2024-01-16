@@ -5,12 +5,16 @@ id
 name
 abbreviation
 note
+created_date
+updated_date
 }
 class  AccessGroup{   
 id
 name
 abbreviation
 note
+created_date
+updated_date
 }
 class User{
 id
@@ -22,6 +26,8 @@ sex
 email
 position
 access_group
+created_date
+updated_date
 }
 class Document {
 id
@@ -38,6 +44,8 @@ urgency_level
 security_level
 attached_file_list
 notes
+created_date
+updated_date
 }
 class IncomingDocument {
 id
@@ -70,35 +78,47 @@ assigner
 implementer
 result
 approve_status
+created_date
+updated_date
 }
 class DocumentType{
 id
 name
 abbreviation
 note
+created_date
+updated_date
 }
 
 class SecurityLevel{
 id
 level
 note
+created_date
+updated_date
 }
 class FieldOfText{
 id
 name
 abbreviation
 note
+created_date
+updated_date
 }
 class UrgencyLevel{
 id
 level
 note
+created_date
+updated_date
 }
 class IssuingAgency{
 id
 name
 abbreviation
 note
+created_date
+updated_date
 }
 class DocumentLog{
 id
@@ -106,6 +126,8 @@ name
 type
 register_year
 note
+created_date
+updated_date
 }
 class Folder{
 id
@@ -113,6 +135,8 @@ folder_number
 name
 status
 retention_period
+created_date
+updated_date
 }
 class FolderCategory{
 id
@@ -120,6 +144,8 @@ folder_number
 name
 status
 retention_period
+created_date
+updated_date
 }
 
 Work::attatch_file_list "0..*" -up- "0..*" Document:attatched
